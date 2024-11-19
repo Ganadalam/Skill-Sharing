@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강의 상세</title>
+    <header>
+        <div class="container">
+            <a href="main.html"><img src="../images/로고.png" alt="Logo" id="logo"></a>
+            <nav id="top-nav">
+                <a href="favorite.html" title="즐겨찾기"><img src="../images/즐겨찾기.png" alt="즐겨찾기"></a>
+                <a href="signup.html" title="회원가입"><img src="../images/회원가입.png" alt="회원가입"></a>
+                <a href="login.html" title="로그인"><img src="../images/로그인.png" alt="로그인"></a>
+                <a href="community.html" title="커뮤니티"><img src="../images/커뮤니티.png" alt="커뮤니티"></a>
+            </nav>
+        </div>
+    </header>
+    <link rel="stylesheet" href="signup.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+
+        header {
+            background-color: #92a4b5;
+            color: white;
+            padding: 15px;
+            text-align: center;
+        }
+
+        header button {
+            background-color: #34495e;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            cursor: pointer;
+            font-size: 16px;
+            border-radius: 5px;
+            
+        }
+
+        header button:hover {
+            background-color: #1abc9c;
+
+        }
+
+        main {
+            padding: 20px;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            flex-wrap: wrap;
+        }
+
+        #lecture-detail {
+            flex: 1;
+            padding: 20px;
+        }
+
+        #lecture-detail img {
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+
+        #lecture-detail h2 {
+            font-size: 24px;
+            margin-bottom: 10px;
+        }
+
+        #lecture-detail p {
+            font-size: 18px;
+            margin: 8px 0;
+        }
+
+        #apply-button {
+            background-color: #e74c3c;
+            color: white;
+            padding: 12px 24px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        #apply-button:hover {
+            background-color: #c0392b;
+        }
+
+        #reviews {
+            flex: 1;
+            padding: 20px;
+        }
+
+        #reviews h3 {
+            font-size: 22px;
+            margin-bottom: 10px;
+        }
+
+        /* 리뷰 작성 스타일 */
+        #review-input {
+            width: 100%;
+            height: 100px;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            margin-bottom: 10px;
+            resize: vertical;
+        }
+
+        /* 닉네임 입력 필드 스타일 */
+        #nickname {
+            width: 100%;
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+
+        #rating {
+            padding: 8px;
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+
+        #review-list {
+            list-style: none;
+            padding: 0;
+            margin-top: 20px;
+        }
+
+        #review-list li {
+            background-color: white;
+            padding: 10px;
+            margin-bottom: 10px;
+            border-radius: 5px;
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        #review-list li p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        #review-list li span {
+            font-weight: bold;
+            color: #6ca4fe;
+        }
+
+        /* 반응형 디자인 */
+        @media (max-width: 768px) {
+            main {
+                padding: 10px;
+                flex-direction: column;
+            }
+
+            #lecture-detail h2 {
+                font-size: 20px;
+            }
+
+            #apply-button {
+                width: 100%;
+            }
+
+            #review-input {
+                height: 80px;
+            }
+
+            #nickname {
+                height: 40px;
+            }
+
+            #lecture-detail img {
+                max-width: 100%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <button onclick="window.history.back()" aria-label="이전 페이지로 돌아가기">← 뒤로가기</button>
+    </header>
+
+    <main>
+        <section id="lecture-detail">
+            <!-- 사진 추가 -->
+            <img src="../images/coding.png" alt="2024 연말 이벤트 강의 이미지">
+            <h2> "2024 연말 coding buff 이벤트!"</h2>
+            <p>기간: 2024.01.01 ~ 2024.02.01</p>
+            <p>위치: 서울특별시 강남구</p>
+            <p>참가비: 무료</p>
+            <p>   * coding buff 대회 개최 1등: 50만원, 2등 30만원, 우수상 5만원 강의 수강권 지급</p>
+            <button id="apply-button" onclick="applyLecture()">수강신청하기</button>
+        </section>
+
+        <section id="reviews">
+            <h3>리뷰</h3>
+            <!-- 닉네임 입력 필드 추가 -->
+            <input type="text" id="nickname" placeholder="닉네임을 입력하세요" oninput="toggleSubmitButton()">
+            <textarea id="review-input" placeholder="리뷰를 작성하세요" oninput="toggleSubmitButton()"></textarea>
+            <div>
+                <label for="rating">별점: </label>
+                <select id="rating">
+                    <option value="⭐⭐⭐⭐⭐">⭐⭐⭐⭐⭐</option>
+                    <option value="⭐⭐⭐⭐">⭐⭐⭐⭐</option>
+                    <option value="⭐⭐⭐">⭐⭐⭐</option>
+                    <option value="⭐⭐">⭐⭐</option>
+                    <option value="⭐">⭐</option>
+                </select>
+            </div>
+            <button onclick="submitReview()" id="submit-button" disabled>리뷰 등록</button>
+            <ul id="review-list">
+                <li>
+                  <span>⭐⭐⭐⭐⭐</span> nickname - 좋은 강의였습니다!</p>
+                    
+                </li>
+            </ul>
+        </section>
+    </main>
+
+    <script>
+        // 수강신청 버튼 클릭 시 처리
+        function applyLecture() {
+            const applyButton = document.getElementById('apply-button');
+            applyButton.disabled = true;
+            applyButton.innerText = '신청 완료!';
+            alert('수강 신청이 완료되었습니다!');
+        }
+
+        // 리뷰 등록 버튼 클릭 시 처리
+        function submitReview() {
+            const reviewInput = document.getElementById('review-input').value;
+            const rating = document.getElementById('rating').value;
+            const nickname = document.getElementById('nickname').value;
+            const currentDate = new Date().toLocaleDateString();
+
+            if (reviewInput.trim() !== "" && nickname.trim() !== "") {
+                const reviewList = document.getElementById('review-list');
+                const newReview = document.createElement('li');
+                newReview.innerHTML = `
+                    <p><span>${rating}</span> - ${reviewInput}</p>
+                    <p><span>작성일: ${currentDate}</span></p>
+                    <p><span>작성자: ${nickname}</span></p>
+                `;
+                reviewList.appendChild(newReview);
+
+                // Reset the form fields
+                document.getElementById('review-input').value = '';
+                document.getElementById('nickname').value = '';
+                document.getElementById('rating').value = '⭐⭐⭐⭐⭐'; // Default rating
+            } else {
+                alert("닉네임과 리뷰 내용을 모두 입력해주세요.");
+            }
+        }
+
+        // 리뷰 등록 버튼 활성화
+        function toggleSubmitButton() {
+            const nickname = document.getElementById('nickname').value.trim();
+            const reviewInput = document.getElementById('review-input').value.trim();
+            const submitButton = document.getElementById('submit-button');
+            submitButton.disabled = !(nickname && reviewInput);
+        }
+    </script>
+</body>
+
+<div class="footer">
+    <!-- Footer -->
+<footer>
+   <div id="social-media">
+       <a href="https://www.instagram.com"><img src="../images/instagram.png" alt="Instagram"></a>
+       <a href="https://www.blog.com"><img src="../images/blog.png" alt="Blog"></a>
+       <a href="https://www.youtube.com"><img src="../images/youtube.png" alt="YouTube"></a>
+   </div>
+</footer>
+   <p>&copy; 2024. All rights reserved.</p>
+</div>
+
+</html>

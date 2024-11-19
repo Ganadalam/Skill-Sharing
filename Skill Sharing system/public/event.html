@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 페이지</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: #34495e;
+            color: white;
+            text-align: center;
+            padding: 40px;
+        }
+        .event-container {
+            max-width: 1200px;
+            margin: 20px auto;
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 30px;
+        }
+        .event-info {
+            background-color: white;
+            flex: 1;
+            border-radius: 10px;
+            padding: 30px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .event-info h2 {
+            color: #333;
+            font-size: 28px;
+        }
+        .event-info p {
+            font-size: 16px;
+            color: #555;
+            line-height: 1.6;
+        }
+        .event-info .date-location {
+            margin-top: 10px;
+            color: #888;
+        }
+        .event-image {
+            max-width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #1abc9c;
+            color: white;
+            padding: 15px 30px;
+            font-size: 18px;
+            text-align: center;
+            text-decoration: none;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+        .cta-button:hover {
+            background-color: #16a085;
+        }
+        .event-schedule {
+            flex: 1;
+            padding: 20px;
+            background-color: #ecf0f1;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .schedule-item {
+            margin-bottom: 15px;
+        }
+        .schedule-item h3 {
+            margin: 0;
+            font-size: 18px;
+            color: #333;
+        }
+        .schedule-item p {
+            color: #777;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="header">
+        <h1>2024 연말 이벤트</h1>
+        <p>특별한 이벤트에 초대합니다! 다양한 경품을 준비했어요.</p>
+    </div>
+
+    <div class="event-container">
+        <div class="event-info">
+            <h2>이벤트 상세 정보</h2>
+            <p>2024년 연말을 맞아 특별한 이벤트를 준비했습니다. 다양한 경품과 함께하는 이벤트로, 여러분을 초대합니다. 지금 바로 등록하세요!</p>
+            <p class="date-location"><strong>일시:</strong> 2024년 12월 25일</p>
+            <p class="date-location"><strong>장소:</strong> 서울시 강남구</p>
+            <img src="https://via.placeholder.com/600x400" alt="Event Image" class="event-image">
+            <a href="#" class="cta-button">참가 신청서 등록하기</a>
+        </div>
+
+        <div class="event-schedule">
+            <h2>이벤트 일정</h2>
+            <div class="schedule-item">
+                <h3>오전 10:00 - 11:00</h3>
+                <p>등록 및 환영 인사</p>
+            </div>
+            <div class="schedule-item">
+                <h3>오전 11:00 - 12:00</h3>
+                <p>경품 추첨</p>
+            </div>
+            <div class="schedule-item">
+                <h3>오후 12:00 - 1:00</h3>
+                <p>점심 식사</p>
+            </div>
+        </div>
+    </div>
+
+</body>
+</html>

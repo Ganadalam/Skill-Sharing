@@ -1,0 +1,264 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="우리 플랫폼의 최신 공지사항을 확인하고, 중요한 정보를 놓치지 마세요.">
+    <meta name="keywords" content="공지사항, 이벤트, 서비스 점검, 업데이트, 플랫폼">
+    <meta name="author" content="우리 플랫폼 팀">
+    <title>공지사항</title>
+    <link rel="stylesheet" href="signup.css">
+
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        /* 헤더 스타일 */
+        .header {
+            background-color: #ffffff;
+            color: white;
+            padding: 40px 20px;
+            text-align: center;
+            box-shadow: 0 4px 10px rgba(255, 255, 255, 0.1);
+        }
+
+        .header h1 {
+            margin: 0;
+            font-size: 2.5em;
+            font-weight: bold;
+        }
+
+        .header p {
+            font-size: 1.2em;
+            margin-top: 10px;
+            opacity: 0.8;
+        }
+
+        /* 공지사항 컨테이너 스타일 */
+        .notice-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 30px;
+            background-color: white;
+            box-shadow: 0px 4px 20px rgba(0, 0, 0, 0.1);
+            border-radius: 12px;
+            max-height: 800px;
+            overflow-y: auto;
+            background-color: #ffffff;
+        }
+
+        /* 공지사항 항목 스타일 */
+        .notice-item {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+            background-color: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.05);
+            margin-bottom: 20px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            animation: fadeInUp 0.5s ease-out;
+        }
+
+        .notice-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .notice-item:last-child {
+            border-bottom: none;
+        }
+
+        .notice-item a {
+            text-decoration: none;
+            color: #007bff;
+            font-size: 1.6em;
+            font-weight: bold;
+            transition: color 0.3s ease, text-decoration 0.3s ease;
+        }
+
+        .notice-item a:hover {
+            color: #0056b3;
+            text-decoration: underline;
+        }
+
+        .notice-item p {
+            color: #555;
+            font-size: 1.1em;
+            margin-top: 10px;
+        }
+
+        /* 공지사항 날짜 및 카테고리 */
+        .notice-meta {
+            font-size: 0.9em;
+            color: #777;
+            margin-top: 5px;
+        }
+
+        /* 푸터 스타일 */
+        .footer {
+            text-align: center;
+            padding: 20px;
+            background-color: #ffffff;
+            color: white;
+            font-size: 1em;
+            margin-top: 40px;
+            border-top: 1px solid #ddd;
+        }
+
+        .footer p {
+            margin: 0;
+        }
+
+        /* "더 보기" 버튼 스타일 */
+        .read-more {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            font-size: 1.1em;
+            cursor: pointer;
+            border-radius: 5px;
+            margin-top: 15px;
+            transition: background-color 0.3s ease;
+        }
+
+        .read-more:hover {
+            background-color: #0056b3;
+        }
+
+        /* 중요 공지사항 강조 */
+        .notice-item.important {
+            background-color: #ffefef;
+            border-left: 5px solid red;
+        }
+
+        .notice-item.important a {
+            color: red;
+        }
+
+        /* 반응형 디자인 */
+        @media (max-width: 1024px) {
+            .header h1 {
+                font-size: 2em;
+            }
+
+            .header p {
+                font-size: 1.1em;
+            }
+
+            .notice-item a {
+                font-size: 1.4em;
+            }
+
+            .notice-item p {
+                font-size: 1em;
+            }
+
+            .read-more {
+                font-size: 1em;
+            }
+        }
+
+        @media (max-width: 768px) {
+            .notice-container {
+                padding: 20px;
+            }
+
+            .header h1 {
+                font-size: 1.8em;
+            }
+
+            .header p {
+                font-size: 1em;
+            }
+
+            .notice-item a {
+                font-size: 1.3em;
+            }
+
+            .footer {
+                font-size: 0.9em;
+            }
+
+            .read-more {
+                font-size: 1em;
+                padding: 8px 16px;
+            }
+        }
+
+        /* 애니메이션 효과 */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <h1>공지사항</h1>
+        <header>
+            <div class="container">
+                <a href="main.html"><img src="../images/logo.png" alt="Logo" id="logo"></a>
+                <nav id="top-nav">
+                    <a href="favorite.html" title="즐겨찾기"><img src="../images/즐겨찾기.png" alt="즐겨찾기"></a>
+                    <a href="signup.html" title="회원가입"><img src="../images/회원가입.png" alt="회원가입"></a>
+                    <a href="login.html" title="로그인"><img src="../images/로그인.png" alt="로그인"></a>
+                    <a href="community.html" title="커뮤니티"><img src="../images/커뮤니티.png" alt="커뮤니티"></a>
+                </nav>
+            </div>
+        </header>
+        <p>우리 플랫폼의 최신 공지사항을 확인하고, 중요한 정보를 놓치지 마세요.</p>
+    </div>
+
+    <div class="notice-container">
+        <div class="notice-item important">
+            <a href="#" aria-label="2024년 연말 이벤트 일정 공지">2024년 연말 이벤트 일정 공지</a>
+            <p class="notice-meta">2024년 11월 19일 • 이벤트</p>
+            <p>2024년 연말에 진행될 특별 이벤트에 대해 안내드립니다. 자세한 내용은 링크를 클릭하여 확인하세요.</p>
+            <button class="read-more">더 보기</button>
+        </div>
+
+        <div class="notice-item">
+            <a href="#" aria-label="서비스 점검 안내">서비스 점검 안내</a>
+            <p class="notice-meta">2024년 12월 15일 • 서비스</p>
+            <p>서버 점검이 2024년 12월 15일에 예정되어 있습니다. 점검 시간 동안 서비스 이용이 제한될 수 있습니다.</p>
+            <button class="read-more">더 보기</button>
+        </div>
+
+        <div class="notice-item">
+            <a href="#" aria-label="새로운 기능 업데이트">새로운 기능 업데이트</a>
+            <p class="notice-meta">2024년 11월 10일 • 업데이트</p>
+            <p>새로운 기능이 추가되었습니다! 업데이트된 내용을 확인하시고 플랫폼을 더욱 편리하게 이용해 보세요.</p>
+            <button class="read-more">더 보기</button>
+        </div>
+    </div>
+
+    <div class="footer">
+         <!-- Footer -->
+    <footer>
+        <div id="social-media">
+            <a href="https://www.instagram.com"><img src="../images/instagram.png" alt="Instagram"></a>
+            <a href="https://www.blog.com"><img src="../images/blog.png" alt="Blog"></a>
+            <a href="https://www.youtube.com"><img src="../images/youtube.png" alt="YouTube"></a>
+        </div>
+    </footer>
+        <p>&copy; 2024 우리 플랫폼. All rights reserved.</p>
+    </div>
+</body>
+
+</html>

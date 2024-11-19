@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>홈 화면</title>
+  <!-- 네비게이션 바 -->
+  <div class="navbar">
+    <header>
+      <a href="main.html"><img src="../images/logo.png" alt="Logo" id="logo"></a>
+      <!-- 홈, 이벤트, 공지사항 추가 -->
+      <div class="nav-center">
+        <a href="main.html" class="nav-link">홈</a>
+        <a href="event.html" class="nav-link">이벤트</a>
+        <a href="notice.html" class="nav-link">공지사항</a>
+      </div>
+    </header>
+    <nav id="top-nav">
+      <div class="list-item">
+        <a href="favorite.html" title="즐겨찾기"><img src="../images/즐겨찾기.png" alt="즐겨찾기"></a>
+        <a href="signup.html" title="회원가입"><img src="../images/회원가입.png" alt="회원가입"></a>
+        <a href="login.html" title="로그인"><img src="../images/로그인.png" alt="로그인"></a>
+        <a href="community.html" title="커뮤니티"><img src="../images/커뮤니티.png" alt="커뮤니티"></a>
+      </div>
+    </nav>
+  </div>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    /* 네비게이션 바 스타일 */
+    .navbar {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 30px; /* 네비게이션 바 상하 패딩을 줄여서 간격 좁히기 */
+      background-color: #6cb2fc;
+      border-bottom: 2px solid #ddd;
+    }
+    .navbar a {
+      text-decoration: none;
+      color: white;
+      margin: 0 20px;
+      font-weight: bold;
+      transition: color 0.3s ease;
+    }
+    .navbar a:hover {
+      color: #ffcc00; /* 마우스 오버시 색상 변화 */
+    }
+    #logo {
+      width: 120px; /* 로고 크기 조정 */
+    }
+    /* 중앙에 배치된 홈, 이벤트, 공지사항 */
+    .nav-center {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex: 1;
+    }
+    .nav-link {
+      margin: 0 15px;
+      font-size: 18px;
+      color: white;
+      font-weight: bold;
+    }
+    .nav-link:hover {
+      color: #ffcc00;
+    }
+    /* 네비게이션 아이템(우측) */
+    #top-nav {
+      display: flex;
+      justify-content: flex-end;
+      align-items: center;
+    }
+    .list-item a {
+      margin-left: 15px;
+    }
+    /* 전체 컨테이너 스타일 */
+    .container {
+      display: flex;
+      flex-direction: row;
+      height: 100vh;
+      padding: 15px 20px; /* 본문과 네비게이션 바 간격 좁히기 */
+      gap: 20px;
+    }
+    #map {
+      flex: 2;
+      height: 100%;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    .list-container {
+      flex: 1;
+      max-width: 450px;
+      padding: 20px;
+      background-color: #f8f9fa;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      overflow-y: auto;
+    }
+    .list-item {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+      border-radius: 8px;
+      padding: 15px;
+      background-color: #ffffff;
+      box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+      justify-content: space-between;
+    }
+    .list-item:hover {
+      transform: scale(1.03);
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.15);
+    }
+    .list-item img {
+      width: 90px;
+      height: 90px;
+      border-radius: 10px;
+      margin-right: 20px;
+    }
+    .list-item .content {
+      flex: 1;
+    }
+    .list-item h4 {
+      margin: 0;
+      font-size: 18px;
+      color: #333;
+    }
+    .list-item p {
+      margin: 5px 0;
+      font-size: 14px;
+      color: gray;
+    }
+    .list-item button {
+      padding: 10px 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+      margin-left: 15px;
+    }
+    .list-item button:hover {
+      background-color: #0056b3;
+    }
+    /* 반응형 디자인 */
+    @media (max-width: 768px) {
+      .navbar {
+        flex-direction: column;
+        align-items: flex-start;
+        padding: 15px;
+      }
+      #map {
+        height: 50vh;
+        border-radius: 10px;
+      }
+      .list-container {
+        max-width: 100%;
+        height: 50vh;
+        padding: 15px;
+      }
+      .list-item img {
+        width: 70px;
+        height: 70px;
+      }
+      .list-item h4 {
+        font-size: 16px;
+      }
+      .list-item button {
+        padding: 8px 16px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <!-- 지도 및 목록 컨테이너 -->
+  <div class="container">
+    <!-- 구글 맵 -->
+    <div id="map"></div>
+    <!-- 강좌 목록 -->
+    <div class="list-container">
+      <div class="list-item">
+        <img src="../images/harmonica.png" alt="하모니카">
+        <div class="content">
+          <h4>하모니카 연주 - 기초</h4>
+          <p>순천시 중앙로</p>
+        </div>
+        <button type="button" onclick="location.href='harmonica.html';">이동하기</button>
+      </div>
+      <div class="list-item">
+        <img src="../images/coding.png" alt="코딩">
+        <div class="content">
+          <h4>코딩 속성 교육</h4>
+          <p>순천대학교</p>
+        </div>
+        <button type="button" onclick="location.href='coding.html';">이동하기</button>
+      </div>
+      <div class="list-item">
+        <img src="../images/swim.png" alt="수영">
+        <div class="content">
+          <h4>생존 수영</h4>
+          <p>순천시 체육관</p>
+        </div>
+        <button type="button" onclick="location.href='swim.html';">이동하기</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- 구글 맵 초기화 스크립트 -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_GOOGLE_MAPS_API_KEY&callback=initMap" async defer></script>
+  <script>
+    function initMap() {
+      const map = new google.maps.Map(document.getElementById("map"), {
+        center: { lat: 37.538, lng: 127.243 },
+        zoom: 12,
+      });
+      const marker = new google.maps.Marker({
+        position: { lat: 37.538, lng: 127.243 },
+        map: map,
+        title: "순천시 중앙로",
+      });
+      map.addListener("click", function(event) {
+        marker.setPosition(event.latLng);
+      });
+    }
+  </script>
+</body>
+</html>

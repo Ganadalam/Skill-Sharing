@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>강의 상세 페이지</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 20px;
+    }
+
+    .container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+
+    .course-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 20px;
+    }
+
+    .course-header img {
+      width: 150px;
+      height: 150px;
+      border-radius: 10px;
+      margin-right: 20px;
+    }
+
+    .course-header h1 {
+      margin: 0;
+    }
+
+    .tabs {
+      display: flex;
+      border-bottom: 2px solid #ddd;
+      margin-bottom: 20px;
+    }
+
+    .tabs button {
+      flex: 1;
+      padding: 10px;
+      background: none;
+      border: none;
+      border-bottom: 2px solid transparent;
+      cursor: pointer;
+    }
+
+    .tabs button.active {
+      border-bottom: 2px solid #007bff;
+      color: #007bff;
+    }
+
+    .tab-content {
+      display: none;
+    }
+
+    .tab-content.active {
+      display: block;
+    }
+
+    .review {
+      margin-top: 20px;
+      border-bottom: 1px solid #ddd;
+      padding-bottom: 10px;
+    }
+
+    /* 반응형 디자인 */
+    @media (max-width: 768px) {
+      .course-header {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .course-header img {
+        width: 120px;
+        height: 120px;
+        margin-bottom: 15px;
+      }
+
+      .tabs {
+        flex-direction: column;
+      }
+
+      .tabs button {
+        padding: 12px;
+        border-bottom: 2px solid transparent;
+      }
+
+      .review {
+        margin-bottom: 15px;
+      }
+    }
+
+    /* 더 보기 버튼 스타일 */
+    #intro-text {
+      overflow: hidden;
+      max-height: 100px;
+      transition: max-height 0.3s ease;
+    }
+
+    #intro-text.expanded {
+      max-height: none;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="course-header">
+      <img src="../images/harmonica.png" alt="하모니카">
+      <div>
+        <h1>하모니카 연주-기초</h1>
+        <p><strong>강사:</strong> 하모니카 장인</p>
+        <p><strong>가격:</strong> 20,000원</p>
+      </div>
+    </div>
+    <div class="tabs">
+      <button class="tab active" onclick="showTab('intro')">강의 소개</button>
+      <button class="tab" onclick="showTab('reviews')">리뷰</button>
+    </div>
+    <div id="intro" class="tab-content active">
+      <p id="intro-text">하모니카 연주의 기초를 배우는 강의입니다...</p>
+      <button id="toggle-intro" onclick="toggleIntro()">더 보기</button>
+    </div>
+    <div id="reviews" class="tab-content">
+      <div class="review">
+        <p><strong>안녕가리:</strong> 덕분에 하모니카 연주가 쉬워졌습니다!</p>
+        <p>⭐️⭐️⭐️⭐️</p>
+      </div>
+      <h3>리뷰 남기기</h3>
+      <form id="review-form">
+        <textarea placeholder="리뷰를 작성하세요" required></textarea><br>
+        <button type="submit">리뷰 남기기</button>
+      </form>
+    </div>
+  </div>
+
+  <script>
+    function showTab(tabId) {
+      document.querySelectorAll('.tab-content').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      document.querySelector(`#${tabId}`).classList.add('active');
+
+      document.querySelectorAll('.tab').forEach(tab => {
+        tab.classList.remove('active');
+      });
+      event.target.classList.add('active');
+    }
+
+    function toggleIntro() {
+      const introText = document.querySelector("#intro-text");
+      const toggleButton = document.querySelector("#toggle-intro");
+
+      if (introText.classList.contains("expanded")) {
+        introText.classList.remove("expanded");
+        toggleButton.textContent = "더 보기";
+      } else {
+        introText.classList.add("expanded");
+        toggleButton.textContent = "접기";
+      }
+    }
+
+    // 리뷰 폼 제출 시 동작
+    document.querySelector("#review-form").addEventListener("submit", function(event) {
+      event.preventDefault();
+      const reviewText = event.target.querySelector("textarea").value;
+      const newReview = document.createElement("div");
+      newReview.classList.add("review");
+      newReview.innerHTML = `<p><strong>새로운 리뷰:</strong> ${reviewText}</p><p>⭐️⭐️⭐️⭐️⭐️</p>`;
+      document.querySelector("#reviews").prepend(newReview);
+      event.target.reset();
+    });
+  </script>
+</body>
+</html>

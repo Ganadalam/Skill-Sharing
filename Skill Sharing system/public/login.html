@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>로그인</title>
+    <link rel="stylesheet" href="login.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .login-container {
+            max-width: 400px;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        }
+        .login-container h1 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .login-container form {
+            display: flex;
+            flex-direction: column;
+        }
+        .login-container input {
+            margin-bottom: 15px;
+            padding: 10px;
+            font-size: 14px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+        .login-container button {
+            padding: 10px;
+            background-color: #007bff;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .login-container button:hover {
+            background-color: #0056b3;
+        }
+        .signup,
+        .forgot-password {
+            text-align: center;
+            margin-top: 10px;
+        }
+        .forgot-password a {
+            color: #007bff;
+            text-decoration: none;
+        }
+        .forgot-password a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="main.html"><img src="../images/logo.png" alt="Logo" id="logo"></a>
+            <nav id="top-nav">
+                <a href="favorite.html" title="즐겨찾기"><img src="../images/즐겨찾기.png" alt="즐겨찾기"></a>
+                <a href="signup.html" title="회원가입"><img src="../images/회원가입.png" alt="회원가입"></a>
+                <a href="login.html" title="로그인"><img src="../images/로그인.png" alt="로그인"></a>
+                <a href="community.html" title="커뮤니티"><img src="../images/커뮤니티.png" alt="커뮤니티"></a>
+            </nav>
+        </div>
+    </header>
+    <main>
+        <div class="login-container">
+            <h1>로그인</h1>
+            <form action="/login" method="post">
+                <input type="email" name="email" placeholder="이메일" required>
+                <input type="password" name="password" placeholder="비밀번호" required>
+                <button type="submit">로그인</button>
+            </form>
+            <div class="forgot-password">
+                <p><a href="reset_password.html">비밀번호를 잊으셨나요?</a></p>
+            </div>
+            <div class="signup">
+                <p>계정이 없으신가요? <a href="signup.html">회원가입</a></p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <div id="social-media">
+            <a href="https://www.instagram.com"><img src="../images/instagram.png" alt="Instagram"></a>
+            <a href="https://www.blog.com"><img src="../images/blog.png" alt="Blog"></a>
+            <a href="https://www.youtube.com"><img src="../images/youtube.png" alt="YouTube"></a>
+        </div>
+    </footer>
+</body>
+</html>

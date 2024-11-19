@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>즐겨찾기</title>
+    <header>
+        <div class="container">
+            <a href="main.html"><img src="../images/logo.png" alt="Logo" id="logo"></a>
+            <nav id="top-nav">
+                <a href="favorite.html" title="즐겨찾기"><img src="../images/즐겨찾기.png" alt="즐겨찾기"></a>
+                <a href="signup.html" title="회원가입"><img src="../images/회원가입.png" alt="회원가입"></a>
+                <a href="login.html" title="로그인"><img src="../images/로그인.png" alt="로그인"></a>
+                <a href="community.html" title="커뮤니티"><img src="../images/커뮤니티.png" alt="커뮤니티"></a>
+            </nav>
+        </div>
+    </header>
+    <link rel="stylesheet" href="signup.css">
+    
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        .header {
+            background-color: #2c3e50;
+            color: white;
+            padding: 20px;
+            text-align: center;
+        }
+        .container {
+            display: flex;
+            justify-content: space-between;
+            padding: 20px;
+            flex-wrap: wrap;
+        }
+        .category {
+            width: 45%;
+            background-color: white;
+            border-radius: 10px;
+            padding: 20px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .category h2 {
+            text-align: center;
+            font-size: 24px;
+            color: #333;
+        }
+        .list-item {
+            background-color: #ecf0f1;
+            border-radius: 8px;
+            margin: 10px 0;
+            padding: 15px;
+            transition: background-color 0.3s ease;
+        }
+        .list-item:hover {
+            background-color: #bdc3c7;
+        }
+        .list-item h3 {
+            font-size: 20px;
+            color: #2c3e50;
+        }
+        .list-item p {
+            font-size: 16px;
+            color: #555;
+        }
+        .list-item a {
+            color: #2980b9;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .favorite-btn {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 8px 12px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .favorite-btn:hover {
+            background-color: #c0392b;
+        }
+        /* 반응형 디자인 */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+                align-items: center;
+            }
+            .category {
+                width: 80%;
+                margin-bottom: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>즐겨찾기</h1>
+    </div>
+    <div class="container">
+        <!-- 전문가 카테고리 -->
+        <div class="category">
+            <h2>전문가</h2>
+            <div class="list-item">
+                <h3>전문가 1: IT 보안 전문가</h3>
+                <p>기업의 사이버 보안을 강화하는 전문가입니다. 다양한 보안 위협에 대한 대응 전략을 제시합니다.</p>
+                <a href="#">자세히 보기</a>
+                <p><strong>제공 서비스:</strong> 사이버 보안 진단 및 대응 교육</p>
+                <p><strong>주최 행사:</strong> 연례 보안 컨퍼런스 2024</p>
+                <button class="favorite-btn" onclick="removeItem(this)">제거</button>
+            </div>
+            <div class="list-item">
+                <h3>전문가 2: 웹 개발 전문가</h3>
+                <p>웹사이트 개발, 사용자 인터페이스(UI) 디자인 등 다양한 웹 개발 분야에서 활동 중입니다.</p>
+                <a href="#">자세히 보기</a>
+                <p><strong>제공 서비스:</strong> 웹사이트 개발, UI/UX 디자인 컨설팅</p>
+                <p><strong>주최 행사:</strong> 웹 개발 워크숍 2024</p>
+                <button class="favorite-btn" onclick="removeItem(this)">제거</button>
+            </div>
+            <div class="list-item">
+                <h3>전문가 3: 데이터 분석 전문가</h3>
+                <p>빅 데이터 분석을 통해 기업의 의사결정을 지원하는 전문가입니다.</p>
+                <a href="#">자세히 보기</a>
+                <p><strong>제공 서비스:</strong> 데이터 분석, 보고서 작성</p>
+                <p><strong>주최 행사:</strong> 데이터 분석 세미나 2024</p>
+                <button class="favorite-btn" onclick="removeItem(this)">제거</button>
+            </div>
+        </div>
+        <!-- 단체 카테고리 -->
+        <div class="category">
+            <h2>단체</h2>
+            <div class="list-item">
+                <h3>단체 1: 한국 웹 개발자 협회</h3>
+                <p>웹 개발자들의 전문성을 높이기 위한 다양한 교육 프로그램과 세미나를 제공합니다.</p>
+                <a href="#">자세히 보기</a>
+                <p><strong>제공 서비스:</strong> 웹 개발자 교육 프로그램</p>
+                <p><strong>주최 행사:</strong> 웹 개발자 컨퍼런스</p>
+                <button class="favorite-btn" onclick="removeItem(this)">제거</button>
+            </div>
+            <div class="list-item">
+                <h3>단체 2: 한국 IT 보안 협회</h3>
+                <p>정보 보안 관련 정책 및 기술을 연구하는 단체입니다. 회원에게 보안 관련 리소스를 제공합니다.</p>
+                <a href="#">자세히 보기</a>
+                <p><strong>제공 서비스:</strong> 보안 교육 및 인증</p>
+                <p><strong>주최 행사:</strong> 보안 기술 워크숍</p>
+                <button class="favorite-btn" onclick="removeItem(this)">제거</button>
+            </div>
+            <div class="list-item">
+                <h3>단체 3: 한국 데이터 분석 협회</h3>
+                <p>데이터 분석 분야의 최신 기술과 트렌드를 공유하는 단체입니다.</p>
+                <a href="#">자세히 보기</a>
+                <p><strong>제공 서비스:</strong> 데이터 분석 관련 리포트 제공</p>
+                <p><strong>주최 행사:</strong> 데이터 분석 세미나</p>
+                <button class="favorite-btn" onclick="removeItem(this)">제거</button>
+            </div>
+        </div>
+    </div>
+    <!-- 페이지네이션 추가 -->
+    <div style="text-align: center; padding: 20px;">
+        <button class="favorite-btn">이전</button>
+        <button class="favorite-btn">다음</button>
+    </div>
+    <script>
+        function removeItem(button) {
+            const item = button.closest('.list-item');
+            item.remove(); // 목록에서 항목 제거
+        }
+    </script>
+</body>
+
+<div class="footer">
+    <!-- Footer -->
+<footer>
+   <div id="social-media">
+       <a href="https://www.instagram.com"><img src="../images/instagram.png" alt="Instagram"></a>
+       <a href="https://www.blog.com"><img src="../images/blog.png" alt="Blog"></a>
+       <a href="https://www.youtube.com"><img src="../images/youtube.png" alt="YouTube"></a>
+   </div>
+</footer>
+  
+</html>

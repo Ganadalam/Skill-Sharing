@@ -1,0 +1,48 @@
+
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>회원가입</title>
+    <link rel="stylesheet" href="signup.css">
+</head>
+<body>
+    <header>
+        <div class="container">
+            <a href="main.html"><img src="../images/logo.png" alt="Logo" id="logo"></a>
+            <nav id="top-nav">
+                <a href="favorite.html" title="즐겨찾기"><img src="../images/즐겨찾기.png" alt="즐겨찾기"></a>
+                <a href="profile.html" title="회원가입"><img src="../images/회원가입.png" alt="회원가입"></a>
+                <a href="login.html" title="로그인"><img src="../images/로그인.png" alt="로그인"></a>
+                <a href="community.html" title="커뮤니티"><img src="../images/커뮤니티.png" alt="커뮤니티"></a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="login-container">
+            <h1>회원가입</h1>
+            <form action="/signup" method="post">
+                <input type="text" name="username" placeholder="이름" required>
+                <input type="email" name="email" placeholder="이메일" required>
+                <input type="password" name="password" placeholder="비밀번호" required>
+                <input type="password" name="confirmPassword" placeholder="비밀번호 확인" required>
+                <button type="submit">회원가입</button>
+            </form>
+            <div class="signup">
+                <p>이미 계정이 있으신가요? <a href="login.html">로그인</a></p>
+            </div>
+        </div>
+    </main>
+
+    <footer>
+        <div id="social-media">
+            <a href="https://www.instagram.com"><img src="../images/instagram.png" alt="Instagram"></a>
+            <a href="https://www.blog.com"><img src="../images/blog.png" alt="Blog"></a>
+            <a href="https://www.youtube.com"><img src="../images/youtube.png" alt="YouTube"></a>
+        </div>
+    </footer>
+</body>
+</html>
+

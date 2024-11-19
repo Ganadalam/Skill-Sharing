@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>생존수영 교육</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f2f2f2;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #4CAF50;
+            color: rgb(133, 15, 15);
+            padding: 20px;
+            text-align: center;
+            background-image: url('../images/swim.png');
+            background-size: cover;
+            background-position: center;
+            color: rgb(192, 67, 67);
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            background-color: #333;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        nav a {
+            color: white;
+            padding: 14px 20px;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        nav a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+
+        .container {
+            display: flex;
+            flex-direction: column;
+            padding: 20px;
+        }
+
+        .section {
+            margin: 20px 0;
+        }
+
+        h2 {
+            color: #333;
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+        }
+
+        .schedule table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .schedule th,
+        .schedule td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        .schedule th {
+            background-color: #4CAF50;
+            color: white;
+        }
+
+        .button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 20px;
+            text-align: center;
+            text-decoration: none;
+            font-size: 16px;
+            border-radius: 5px;
+            margin-top: 20px;
+            transition: background-color 0.3s ease;
+        }
+
+        .button:hover {
+            background-color: #45a049;
+        }
+
+        .footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            position: fixed;
+            width: 100%;
+            bottom: 0;
+        }
+
+        /* 반응형 디자인 */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+            }
+
+            .container {
+                padding: 10px;
+            }
+
+            .section {
+                margin: 10px 0;
+            }
+
+            .schedule table {
+                width: 100%;
+                font-size: 14px;
+            }
+        }
+
+        /* 슬라이드 효과 */
+        .slide {
+            display: none;
+            width: 100%;
+            height: 300px;
+            object-fit: cover;
+        }
+
+        .active {
+            display: block;
+        }
+
+        /* 폼 스타일 */
+        .form-container {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin: 0 auto;
+        }
+
+        .form-container input,
+        .form-container textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        .form-container button {
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            padding: 12px 20px;
+            cursor: pointer;
+            border-radius: 5px;
+            width: 100%;
+        }
+
+        .form-container button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <h1>생존수영 교육 프로그램</h1>
+        <p>물속에서 안전을 지키는 방법을 배우세요.</p>
+    </header>
+
+    <nav>
+        <a href="#about" aria-label="교육 소개">교육 소개</a>
+        <a href="#schedule" aria-label="교육 일정">교육 일정</a>
+        <a href="#register" aria-label="등록하기">등록하기</a>
+        <a href="#contact" aria-label="문의하기">문의하기</a>
+    </nav>
+
+    <div class="container">
+        <section id="about" class="section">
+            <h2>교육 소개</h2>
+            <p>생존수영은 물속에서 사고를 예방하고, 위급 상황에서 안전하게 대처할 수 있는 능력을 기르는 프로그램입니다. 본 교육은 초보자부터 경험자까지 누구나 참여할 수 있습니다.</p>
+            <p>교육 내용은 물에 적응하기, 물속에서 떠 있는 방법, 구조 기술 등을 포함합니다.</p>
+        </section>
+
+        <section id="schedule" class="section schedule">
+            <h2>교육 일정</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>날짜</th>
+                        <th>시간</th>
+                        <th>교육 내용</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2024년 11월 20일</td>
+                        <td>10:00 - 12:00</td>
+                        <td>물에 적응하기</td>
+                    </tr>
+                    <tr>
+                        <td>2024년 11월 22일</td>
+                        <td>14:00 - 16:00</td>
+                        <td>물속에서 떠 있기</td>
+                    </tr>
+                    <tr>
+                        <td>2024년 11월 24일</td>
+                        <td>09:00 - 11:00</td>
+                        <td>구조 기술 배우기</td>
+                    </tr>
+                </tbody>
+            </table>
+        </section>
+
+        <section id="register" class="section">
+            <h2>교육 등록</h2>
+            <p>생존수영 교육에 참여하려면 아래 버튼을 클릭하여 등록하세요.</p>
+            <a href="login.html" class="button">등록하기</a>
+        </section>
+
+        <section id="contact" class="section">
+            <h2>문의하기</h2>
+            <p>궁금한 점이 있으시면 아래 연락처로 문의 주세요.</p>
+            <p>Email: support@swimcourse.com</p>
+            <p>전화: 123-456-7890</p>
+        </section>
+
+        <section id="inquiry-form" class="section">
+            <h2> 인적사항 전송</h2>
+            <div class="form-container">
+                <form action="#">
+                    <input type="text" placeholder="이름" required>
+                    <input type="email" placeholder="이메일" required>
+                    <textarea placeholder="희망 시 작성. 수영 경험, 보유 알레르기 등 인적사항. 수업 시 주의사항 작성." rows="5" required></textarea>
+                    <button type="submit">전송</button>
+                </form>
+            </div>
+        </section>
+    </div>
+
+    <div class="footer">
+        <p>&copy; 2024 생존수영 교육 | 모든 권리 보유</p>
+    </div>
+
+    <script>
+        // Smooth scrolling for anchor links
+        document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                document.querySelector(this.getAttribute('href')).scrollIntoView({
+                    behavior: 'smooth'
+                });
+            });
+        });
+
+        // 슬라이드 기능 추가 (배경 이미지로 사용할 수 있음)
+        let slideIndex = 0;
+        const slides = document.querySelectorAll('.slide');
+
+        function showSlides() {
+            for (let i = 0; i < slides.length; i++) {
+                slides[i].classList.remove('active');
+            }
+            slideIndex++;
+            if (slideIndex > slides.length) {
+                slideIndex = 1;
+            }
+            slides[slideIndex - 1].classList.add('active');
+            setTimeout(showSlides, 5000); // 슬라이드 간 5초 간격
+        }
+
+        showSlides();
+    </script>
+</body>
+
+<div class="footer">
+    <!-- Footer -->
+
+   <p>&copy; 2024. All rights reserved.</p>
+
+</html>

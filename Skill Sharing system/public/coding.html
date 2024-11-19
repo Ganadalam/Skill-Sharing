@@ -1,0 +1,129 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>코딩 교육</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            color: #28a745;
+        }
+        .lesson-info {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+        }
+        .lesson-info img {
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .lesson-info p {
+            font-size: 16px;
+            color: #555;
+        }
+        .lesson-info ul {
+            list-style: none;
+            padding: 0;
+        }
+        .lesson-info li {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .lesson-info button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .lesson-info button:hover {
+            background-color: #218838;
+        }
+        .schedule-container {
+            margin-top: 30px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .schedule-container table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .schedule-container table th, .schedule-container table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>코딩 교육</h1>
+        
+        <div class="lesson-info">
+            <img src="../images/coding.png" alt="코딩 교육 이미지">
+            <p>기초부터 고급까지 다양한 코딩 기술을 배울 수 있는 강좌입니다. 실습을 통해 코딩 능력을 키우세요.</p>
+            <ul>
+                <li>프로그래밍 기초 및 데이터 구조</li>
+                <li>알고리즘 및 문제 해결</li>
+                <li>웹 개발 실습</li>
+            </ul>
+            <button onclick="location.href='signup.html'">강좌 신청하기</button>
+        </div>
+
+        <div class="schedule-container">
+            <h3>강의 일정</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>날짜</th>
+                        <th>시간</th>
+                        <th>내용</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2024-12-01</td>
+                        <td>14:00 ~ 16:00</td>
+                        <td>프로그래밍 기초</td>
+                    </tr>
+                    <tr>
+                        <td>2024-12-02</td>
+                        <td>14:00 ~ 16:00</td>
+                        <td>알고리즘 및 문제 해결</td>
+                    </tr>
+                    <tr>
+                        <td>2024-12-03</td>
+                        <td>14:00 ~ 16:00</td>
+                        <td>웹 개발 실습</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+</body>
+</html>

@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 페이지</title>
+    <link rel="stylesheet" href="signup.css">
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+        .header {
+            background-color: #333;
+            color: #fff;
+            padding: 20px;
+            text-align: center;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+        }
+        .header h1 {
+            font-size: 36px;
+            margin: 0;
+        }
+        .event-container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+        .event-info {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        .event-info h2 {
+            font-size: 28px;
+            color: #333;
+        }
+        .event-info p {
+            font-size: 18px;
+            color: #555;
+        }
+        .event-details {
+            display: flex;
+            justify-content: space-between;
+            font-size: 16px;
+            color: #777;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #1abc9c;
+            color: white;
+            padding: 15px 30px;
+            font-size: 20px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease;
+            text-align: center;
+            margin-top: 30px;
+        }
+        .cta-button:hover {
+            background-color: #16a085;
+        }
+        .event-image {
+            width: 100%;
+            border-radius: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="container">
+            <a href="main.html"><img src="../images/logo.png" alt="Logo" id="logo"></a>
+            <nav id="top-nav">
+                <a href="favorite.html" title="즐겨찾기"><img src="../images/즐겨찾기.png" alt="즐겨찾기"></a>
+                <a href="signup.html" title="회원가입"><img src="../images/회원가입.png" alt="회원가입"></a>
+                <a href="login.html" title="로그인"><img src="../images/로그인.png" alt="로그인"></a>
+                <a href="community.html" title="커뮤니티"><img src="../images/커뮤니티.png" alt="커뮤니티"></a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="header">
+        <h1>2025년의 특별 이벤트</h1>
+    </div>
+
+    <div class="event-container">
+        <div class="event-info">
+            <h2>2025 Hot summer 이벤트</h2>
+            <img src="../images/swim.png" alt="이벤트 이미지" class="event-image">
+            <p>연말을 맞이하여 준비한 특별한 이벤트에 참여하세요! 멋진 경품과 즐거운 시간이 기다리고 있습니다. 함께 해주세요!</p>
+            <div class="event-details">
+                <div><strong>일시:</strong> 2025년 6월 20일</div>
+                <div><strong>장소:</strong> 서울시 강남구</div>
+            </div>
+            <a href="#register" class="cta-button">이벤트 참가 등록하기</a>
+        </div>
+    </div>
+
+</body>
+</html>
+ <footer>
+        <div id="social-media">
+            <a href="https://www.instagram.com"><img src="../images/instagram.png" alt="Instagram"></a>
+            <a href="https://www.blog.com"><img src="../images/blog.png" alt="Blog"></a>
+            <a href="https://www.youtube.com"><img src="../images/youtube.png" alt="YouTube"></a>
+        </div>
+    </footer>
+</body>
+</html>
