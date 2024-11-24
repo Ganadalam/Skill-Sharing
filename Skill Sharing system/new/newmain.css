@@ -1,0 +1,187 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+/* Body */
+body {
+  font-family: 'Roboto', sans-serif;
+  background-color: #f5f5f5;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header */
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  background-color: #d4e0fe; /* Blue color */
+  padding: 15px 30px;
+  color: #000000;
+}
+/* 공통 아이콘 스타일 */
+#top-nav a img {
+  width: 24px; /* 아이콘의 기본 너비 */
+  height: 24px; /* 아이콘의 기본 높이 */
+  margin: 0 10px; /* 아이콘 간 간격 */
+  transition: transform 0.3s ease; /* 호버 시 부드러운 애니메이션 */
+}
+
+#top-nav a img:hover {
+  transform: scale(1.2); /* 호버 시 크기 확대 */
+}
+
+/* 헤더 영역 스타일 */
+#top-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 15px; /* 아이콘 간 간격 */
+  padding: 10px 20px;
+}
+
+#logo {
+  height: 40px; /* 로고 크기 */
+  width: auto;
+  margin-right: auto; /* 왼쪽 정렬 */
+}
+
+/* Updated logo font for a more professional look */
+.header .logo {
+  font-size: 32px; /* Larger size for better visibility */
+  font-weight: 700;
+  font-family: 'Montserrat', sans-serif; /* Professional and modern font */
+  letter-spacing: 2px; /* Slight letter-spacing for emphasis */
+  text-transform: uppercase; /* Makes the logo more distinct */
+}
+
+/* Navigation links styling */
+nav a {
+  color: #0000007c;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: 'Lora', serif; /* Serif font for a more classic, professional feel */
+  font-size: 18px; /* Slightly larger font size for better readability */
+  letter-spacing: 1px; /* Slight letter-spacing for a more open feel */
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.auth-buttons a:hover {
+  text-decoration: underline;
+}
+
+/* Main content */
+.main-content {
+  display: flex;
+  justify-content: space-between;
+  padding: 30px;
+}
+
+/* Map container */
+.map-container {
+  flex: 1;
+}
+
+/* Search Container */
+.search-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 30px;
+  width: 100%;
+  max-width: 700px; /* Limiting the max width */
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.search-bar {
+  width: 70%; /* Make the search bar more prominent */
+  padding: 12px 20px;
+  font-size: 16px;
+  border: 2px solid #3498db;
+  border-radius: 30px 0 0 30px; /* Rounded left corners */
+  background-color: #fff;
+  transition: all 0.3s ease;
+}
+
+.search-bar:focus {
+  outline: none;
+  border-color: #2980b9; /* Darker blue when focused */
+  box-shadow: 0 4px 12px rgba(41, 128, 185, 0.3);
+}
+
+.search-bar::placeholder {
+  color: #888;
+  font-style: italic;
+}
+
+.search-button {
+  padding: 12px 20px;
+  background-color: #3498db;
+  border: none;
+  border-radius: 0 30px 30px 0; /* Rounded right corners */
+  color: white;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+  margin-left: 10px;
+}
+
+.search-button:hover {
+  background-color: #2980b9;
+}
+
+/* Cards */
+.cards-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  max-width: 350px;
+}
+
+.card {
+  display: block;
+  background-color: #fff;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  text-align: center;
+  padding: 20px;
+  transition: transform 0.3s ease;
+  text-decoration: none;
+}
+
+.card:hover {
+  transform: translateY(-10px);
+}
+
+.card img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+}
+
+.card h3 {
+  font-size: 18px;
+  font-weight: 600;
+  margin: 15px 0;
+}
+
+.card p {
+  font-size: 14px;
+  color: #555;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .main-content {
+    flex-direction: column;
+    align-items: center;
+  }
+}

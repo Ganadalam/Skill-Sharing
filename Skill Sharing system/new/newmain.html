@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>스킬 쉐어링</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+
+  <!-- Google Fonts for advanced typography -->
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&family=Playfair+Display:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Google Maps API -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=YOUR_API_KEY&callback=initMap" async defer></script>
+  <link rel="stylesheet" href="newmain.css">
+</head>
+<body>
+  <header class="header">
+    <!-- Logo as an image with a link to main page -->
+    <a href="newmain.html" class="logo-link">
+      <img src="../images/logo.png" alt="Skill Sharing Logo" class="logo-image">
+    </a>
+    <nav>
+      <a href="#">홈</a>
+      <a href="event2.html">이벤트</a>
+      <a href="notice.html">공지사항</a>
+    </nav>
+    <header>
+      <div class="container">
+            <nav id="top-nav">
+              <a href="favorite.html" title="즐겨찾기"><img src="../images/즐겨찾기.png" alt="즐겨찾기"></a>
+              <a href="signup.html" title="회원가입"><img src="../images/회원가입.png" alt="회원가입"></a>
+              <a href="login.html" title="로그인"><img src="../images/로그인.png" alt="로그인"></a>
+              <a href="community.html" title="커뮤니티"><img src="../images/커뮤니티.png" alt="커뮤니티"></a>
+          </nav>
+      </div>
+  </header>
+
+  </header>
+  <main class="main-content">
+    <div class="map-container">
+      <!-- Search bar container with a button -->
+      <div class="search-container">
+        <input type="text" id="searchBar" placeholder="찾고 싶은 재능을 검색해 보세요." class="search-bar">
+        <button id="searchButton" class="search-button">검색</button>
+      </div>
+      <div id="map"></div>
+    </div>
+
+    <!-- This section will display filtered courses based on search -->
+    <aside id="cardsContainer" class="cards-container">
+      <!-- Default course cards displayed initially -->
+      <a href="harmonica.html" class="card">
+        <img src="../images/harmonica.png" alt="하모니카 연주">
+        <h3>하모니카 연주-기초</h3>
+        <p>기간: 2024/01/08</p>
+        <p>가격: 20,000원</p>
+      </a>
+      <a href="coding.html" class="card">
+        <img src="../images/coding.png" alt="ChatGPT 교육">
+        <h3>ChatGPT 활용 단기 속성 교육</h3>
+        <p>기간: 2024/01/06</p>
+        <p>가격: 25,000원</p>
+      </a>
+      <a href="swim.html" class="card">
+        <img src="../images/swim.png" alt="생존 수영">
+        <h3>생존 수영</h3>
+        <p>기간: 2024/01/10</p>
+        <p>가격: 30,000원</p>
+      </a>
+    </aside>
+  </main>
+  <script src="newmain.js"></script>
+</body>
+</html>

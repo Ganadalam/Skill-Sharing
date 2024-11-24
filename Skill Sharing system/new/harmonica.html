@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="하모니카 연주 기초 강좌 - 하모니카를 배우고 싶다면 시작하세요.">
+    <meta name="keywords" content="하모니카, 연주, 기초, 음악, 강좌, 초보자">
+    <meta name="author" content="하모니카 강좌">
+    <title>하모니카 연주 - 기초</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+            transition: all 0.3s ease;
+        }
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
+        }
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            color: #007bff;
+        }
+        .lesson-info {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            transition: transform 0.3s ease;
+        }
+        .lesson-info:hover {
+            transform: translateY(-10px);
+        }
+        .lesson-info img {
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+        }
+        .lesson-info p {
+            font-size: 16px;
+            color: #555;
+        }
+        .lesson-info ul {
+            list-style: none;
+            padding: 0;
+        }
+        .lesson-info li {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+        .lesson-info button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        .lesson-info button:hover {
+            background-color: #0056b3;
+            transform: scale(1.05);
+        }
+        .video-container {
+            margin-top: 30px;
+            text-align: center;
+        }
+        .video-container iframe {
+            width: 100%;
+            max-width: 800px;
+            height: 450px;
+            border: none;
+            border-radius: 8px;
+        }
+        .schedule-container, .instructor-container, .faq-container, .signup-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-top: 40px;
+            opacity: 0;
+            animation: fadeIn 1.5s forwards;
+        }
+        .schedule-container h3, .instructor-container h3, .faq-container h3 {
+            font-size: 24px;
+            color: #007bff;
+            text-align: center;
+        }
+        .schedule-container table, .faq-container ul {
+            width: 100%;
+        }
+        .schedule-container th, .schedule-container td, .faq-container li {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+        .review-section {
+            margin-top: 40px;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        .review-section h3 {
+            font-size: 24px;
+            color: #007bff;
+            text-align: center;
+        }
+        .review {
+            margin-bottom: 20px;
+            border-bottom: 1px solid #ddd;
+            padding-bottom: 10px;
+        }
+        .review span {
+            font-weight: bold;
+            color: #007bff;
+        }
+        .signup-form input, .signup-form button {
+            width: 100%;
+            padding: 12px;
+            margin: 8px 0;
+            border-radius: 5px;
+            border: 1px solid #ccc;
+            font-size: 16px;
+        }
+        .signup-form button {
+            background-color: #007bff;
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: background-color 0.3s ease;
+        }
+        .signup-form button:hover {
+            background-color: #0056b3;
+        }
+        /* 애니메이션 */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>하모니카 연주 - 기초</h1>
+        
+        <div class="lesson-info">
+            <img src="../images/harmonica.png" alt="하모니카 이미지">
+            <p>하모니카 연주 기초 강좌입니다. 하모니카를 처음 접하는 분들을 위해 기본적인 기법을 배우고 연주를 시작할 수 있습니다.</p>
+            <ul>
+                <li>하모니카 기본 구조 및 종류</li>
+                <li>기본적인 운지법 및 발음법</li>
+                <li>기초적인 곡 연주 (1박 2일)</li>
+            </ul>
+            <button onclick="location.href='#signup-form'">강좌 신청하기</button>
+        </div>
+
+        <div class="video-container">
+            <h3>실습 영상</h3>
+            <iframe src="https://www.youtube.com/embed/xyz" title="하모니카 기초 강좌"></iframe>
+        </div>
+
+        <!-- 강의 일정 -->
+        <div class="schedule-container">
+            <h3>강의 일정</h3>
+            <table>
+                <thead>
+                    <tr>
+                        <th>날짜</th>
+                        <th>시간</th>
+                        <th>내용</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>2024-12-01</td>
+                        <td>10:00 ~ 12:00</td>
+                        <td>하모니카 소개 및 기본 운지법</td>
+                    </tr>
+                    <tr>
+                        <td>2024-12-02</td>
+                        <td>14:00 ~ 16:00</td>
+                        <td>기초 곡 연주 실습</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <!-- 강좌 진행자 소개 -->
+        <div class="instructor-container">
+            <h3>강좌 진행자 소개</h3>
+            <p>하모니카 연주 강좌의 진행자는 10년 이상의 경력을 가진 전문 하모니카 연주자입니다. 다양한 음악 스타일을 다루며, 여러분에게 유익한 학습 경험을 제공합니다.</p>
+        </div>
+
+        <!-- FAQ 섹션 -->
+        <div class="faq-container">
+            <h3>자주 묻는 질문(FAQ)</h3>
+            <ol>
+                <li><strong>이 강좌는 초보자도 따라할 수 있나요?</strong> - 네, 하모니카를 처음 시작하시는 분도 쉽게 따라할 수 있게 기초부터 단계적으로 배울 수 있습니다.</li>
+                <li><strong>강좌는 몇 회차로 진행되나요?</strong> - 이 강좌는 2회차로 진행되며, 매회 2시간씩 총 4시간의 강의가 이뤄져요.</li>
+                <li><strong>강의를 들을 때 필요한 하모니카는 어떤 종류인가요?</strong> - 기본 C key 하모니카 하나면 충분합니다. 다른 키의 하모니카 사용 시 추가로 구매하셔야 할 수 있습니다.</li>
+            </ol>
+        </div>
+
+        <!-- 강좌 신청 폼 -->
+        <div id="signup-form" class="signup-form">
+            <h3>강좌 신청하기</h3>
+            <form action="signup_action.php" method="post" onsubmit="return validateForm()">
+                <input type="text" name="name" placeholder="이름을 입력하세요" required>
+                <input type="email" name="email" placeholder="이메일을 입력하세요" required>
+                <button type="submit">신청하기</button>
+            </form>
+        </div>
+
+        <!-- 리뷰 섹션 -->
+        <div class="review-section">
+            <h3>수강생 리뷰</h3>
+            <div class="review">
+                <p><span>홍길동:</span> 하모니카를 처음 시작했는데, 강의가 정말 잘 구성되어 있어 이해하기 쉬웠습니다. 재미있게 배웠어요!</p>
+            </div>
+            <div class="review">
+                <p><span>김철수:</span> 기본부터 차근차근 설명해주셔서 큰 도움이 되었습니다. 영상도 유익했어요!</p>
+            </div>
+            <div class="review">
+                <p><span>이영희:</span> 정말 유익한 강좌였습니다. 특히 실습 영상이 매우 도움이 되었어요.</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        function validateForm() {
+            const name = document.querySelector('input[name="name"]').value;
+            const email = document.querySelector('input[name="email"]').value;
+            if (!name || !email) {
+                alert("모든 필드를 작성해주세요.");
+                return false;
+            }
+            return true;
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,375 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>이벤트 페이지</title>
+    <link rel="stylesheet" href="signup.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&display=swap" rel="stylesheet">
+    <style>
+        nav {
+    display: flex; /* 플렉스 박스 사용 */
+    justify-content: center; /* 가로축 중앙 정렬 */
+    align-items: center; /* 세로축 중앙 정렬 (필요 시) */
+    gap: 20px; /* 메뉴 간 간격 */
+}
+
+nav a {
+    text-decoration: none; /* 밑줄 제거 */
+    color: #333; /* 텍스트 색상 */
+    font-weight: bold; /* 텍스트 굵기 */
+    font-size: 16px; /* 글씨 크기 */
+}
+
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f2f2f2;
+        }
+
+        /* header 스타일 */
+        header {
+            background-color: #ffffff;
+            color: #fff;
+            padding: 15px 0;
+            box-shadow: 0 2px 10px rgba(255, 255, 255, 0.97);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        header .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        header img#logo {
+            height: 50px;
+        }
+
+        /* Navigation links styling */
+nav a {
+  color: #0000007c;
+  margin-left: 20px;
+  text-decoration: none;
+  font-weight: 500;
+  font-family: 'Lora', serif; /* Serif font for a more classic, professional feel */
+  font-size: 18px; /* Slightly larger font size for better readability */
+  letter-spacing: 1px; /* Slight letter-spacing for a more open feel */
+}
+
+nav a:hover {
+  text-decoration: underline;
+}
+
+.auth-buttons a:hover {
+  text-decoration: underline;
+}
+
+        #top-nav a {
+            margin: 0 15px;
+        }
+        #top-nav img {
+            height: 25px;
+            width: 25px;
+        }
+
+        /* 이벤트 제목 영역 디자인 수정 */
+        .event-header {
+            background: linear-gradient(135deg, #bffafd, #90fdd1); /* 부드러운 그라디언트 */
+            color: #333;
+            padding: 30px 20px;
+            text-align: center;
+            border-radius: 8px;
+            box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+        }
+        .event-header h1 {
+            font-size: 32px;
+            font-weight: 400;
+            margin: 0;
+            letter-spacing: 2px;
+        }
+        .event-header p {
+            font-size: 18px;
+            margin-top: 15px;
+            color: #555;
+        }
+
+        /* 정렬 버튼 디자인 */
+        .sort-buttons {
+            text-align: center;
+            margin-top: 30px;
+            margin-bottom: 40px;
+        }
+        .sort-buttons button {
+            background-color: #b1b1b1;
+            color: white;
+            padding: 12px 25px;
+            font-size: 18px;
+            border: none;
+            border-radius: 6px;
+            margin: 0 15px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+        .sort-buttons button:hover {
+            background-color: #c9e2dd;
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(227, 130, 130, 0.2);
+        }
+
+        /* 이벤트 카드 영역 */
+        .event-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            padding: 20px;
+        }
+        .event-card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 12px 40px rgba(0, 0, 0, 0.1);
+            padding: 30px;
+            text-align: center;
+            transition: transform 0.3s ease, box-shadow 0.3s ease, background-color 0.3s ease;
+            background: linear-gradient(135deg, #ffffff, #f9f9f9);
+        }
+        .event-card:hover {
+            transform: translateY(-12px);
+            box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
+            background-color: #f1f1f1;
+        }
+        .event-card img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+            border-radius: 10px;
+            margin-bottom: 20px;
+            transition: transform 0.3s ease;
+        }
+        .event-card:hover img {
+            transform: scale(1.05);
+        }
+        .event-card h2 {
+            font-size: 28px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 10px;
+        }
+        .event-card p {
+            font-size: 17px;
+            color: #666;
+            margin-bottom: 20px;
+        }
+        .event-card .event-details {
+            font-size: 15px;
+            color: #777;
+            margin-bottom: 20px;
+        }
+        .cta-button {
+            display: inline-block;
+            background-color: #1abc9c;
+            color: white;
+            padding: 18px 40px;
+            font-size: 18px;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s ease, transform 0.3s ease, box-shadow 0.3s ease;
+            text-align: center;
+            margin-top: 10px;
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+        }
+        .cta-button:hover {
+            background-color: #16a085;
+            transform: scale(1.05);
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        footer {
+            background-color: #333;
+            color: white;
+            padding: 25px;
+            text-align: center;
+        }
+        footer a {
+            margin: 0 18px;
+            color: white;
+            text-decoration: none;
+            font-size: 16px;
+        }
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* 모달 창 스타일 */
+        #confirmation-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            justify-content: center;
+            align-items: center;
+            animation: fadeIn 0.3s ease-out;
+        }
+        .modal-content {
+            background-color: #fff;
+            padding: 30px;
+            border-radius: 8px;
+            text-align: center;
+            width: 400px;
+            animation: slideIn 0.5s ease-out;
+        }
+        .modal-content h2 {
+            font-size: 22px;
+            margin-bottom: 20px;
+        }
+        .close-btn {
+            background-color: #e74c3c;
+            color: white;
+            padding: 12px 24px;
+            border: none;
+            border-radius: 6px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+        .close-btn:hover {
+            background-color: #c0392b;
+        }
+
+        /* 애니메이션 */
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+
+        @keyframes slideIn {
+            from { transform: translateY(-50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
+        }
+
+    </style>
+</head>
+<body>
+    
+    <header>
+        <div class="container">
+            <a href="newmain.html"><img src="../images/logo.png" alt="Logo" id="logo"></a>
+            <nav id="top-nav">
+                <a href="favorite.html" title="즐겨찾기"><img src="../images/즐겨찾기.png" alt="즐겨찾기"></a>
+                <a href="signup.html" title="회원가입"><img src="../images/회원가입.png" alt="회원가입"></a>
+                <a href="login.html" title="로그인"><img src="../images/로그인.png" alt="로그인"></a>
+                <a href="community.html" title="커뮤니티"><img src="../images/커뮤니티.png" alt="커뮤니티"></a>
+            </nav>
+        </div>
+        <nav>
+            <a href="newmain.html">홈</a>
+            <a href="event2.html">이벤트</a>
+            <a href="notice.html">공지사항</a>
+          </nav>
+    </header>
+     
+    <div class="event-header">
+        <h1>For you, our Special Events!</h1>
+        <p>다양한 이벤트와 특별한 기회들을 놓치지 마세요!</p>
+    </div>
+
+    <!-- 정렬 버튼 추가 -->
+    <div class="sort-buttons">
+        <button onclick="sortEvents('popular')">인기순</button>
+        <button onclick="sortEvents('latest')">최신순</button>
+    </div>
+
+    <div class="event-container">
+        <!-- 이벤트 카드 1 -->
+        <div class="event-card" data-popularity="5" data-date="2025-06-20">
+            <img src="../images/swim.png" alt="이벤트 이미지">
+            <h2>2025 Hot summer 이벤트</h2>
+            <p>연말을 맞이하여 준비한 특별한 이벤트에 참여하세요! 멋진 경품과 즐거운 시간이 기다리고 있습니다. 함께 해주세요!</p>
+            <div class="event-details">
+                <div><strong>일시:</strong> 2025년 6월 20일</div>
+                <div><strong>장소:</strong> 서울시 강남구</div>
+            </div>
+            <a href="#" class="cta-button" onclick="showConfirmation()">이벤트 참가 등록하기</a>
+        </div>
+
+        <!-- 이벤트 카드 2 -->
+        <div class="event-card" data-popularity="8" data-date="2025-05-15">
+            <img src="../images/harmonica.png" alt="이벤트 이미지">
+            <h2>하모니카 연주 마스터 클래스</h2>
+            <p>하모니카 전문가로 성장할 수 있는 기회를 제공합니다. 초보부터 전문가까지 누구나 참여 가능!</p>
+            <div class="event-details">
+                <div><strong>일시:</strong> 2025년 5월 15일</div>
+                <div><strong>장소:</strong> 서울시 종로구</div>
+            </div>
+            <a href="#" class="cta-button" onclick="showConfirmation()">이벤트 참가 등록하기</a>
+        </div>
+
+        <!-- 이벤트 카드 3 -->
+        <div class="event-card" data-popularity="2" data-date="2025-07-10">
+            <img src="../images/coding.png" alt="이벤트 이미지">
+            <h2>AI와 ChatGPT 활용 교육</h2>
+            <p>AI 기술을 활용한 ChatGPT 교육과정을 통해 다양한 실습을 경험하고, 인공지능 전문가로 거듭날 수 있습니다.</p>
+            <div class="event-details">
+                <div><strong>일시:</strong> 2025년 7월 10일</div>
+                <div><strong>장소:</strong> 서울시 송파구</div>
+            </div>
+            <a href="coding.html" class="cta-button" onclick="showConfirmation()">이벤트 참가 등록하기</a>
+        </div>
+    </div>
+
+    <!-- 모달 알림창 -->
+    <div id="confirmation-modal">
+        <div class="modal-content">
+            <h2>참가 신청이 완료되었습니다!</h2>
+            <button class="close-btn" onclick="closeModal()">확인</button>
+        </div>
+    </div>
+
+    <footer>
+        <div id="social-media">
+            <a href="https://www.instagram.com"><img src="../images/instagram.png" alt="Instagram"></a>
+            <a href="https://www.blog.com"><img src="../images/blog.png" alt="Blog"></a>
+            <a href="https://www.youtube.com"><img src="../images/youtube.png" alt="YouTube"></a>
+        </div>
+    </footer>
+
+    <script>
+        
+        // 이벤트를 인기순 또는 최신순으로 정렬하는 함수
+        function sortEvents(criteria) {
+            const container = document.querySelector('.event-container');
+            const events = Array.from(container.querySelectorAll('.event-card'));
+
+            if (criteria === 'popular') {
+                events.sort((a, b) => b.dataset.popularity - a.dataset.popularity); // 인기순 정렬
+            } else if (criteria === 'latest') {
+                events.sort((a, b) => new Date(b.dataset.date) - new Date(a.dataset.date)); // 최신순 정렬
+            }
+
+            // 정렬된 이벤트를 컨테이너에 다시 추가
+            events.forEach(event => container.appendChild(event));
+        }
+
+        // 참가 신청 완료 알림창 표시
+        function showConfirmation() {
+            document.getElementById('confirmation-modal').style.display = 'flex';
+        }
+
+        // 알림창 닫기
+        function closeModal() {
+            document.getElementById('confirmation-modal').style.display = 'none';
+        }
+    </script>
+
+</body>
+</html>

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>재능 기부 등록</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f7f7f7;
+            margin: 0;
+            padding: 0;
+        }
+        .container {
+            width: 50%;
+            margin: 50px auto;
+            padding: 20px;
+            background-color: #fff;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        h1 {
+            text-align: center;
+        }
+        label {
+            display: block;
+            margin: 10px 0 5px;
+        }
+        input, textarea {
+            width: 100%;
+            padding: 10px;
+            margin: 5px 0 15px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>재능 기부 등록</h1>
+        <form action="/submit-donation" method="POST">
+            <label for="name">기부자 이름</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="skill">기부 항목</label>
+            <input type="text" id="skill" name="skill" required>
+
+            <label for="description">기부 내용</label>
+            <textarea id="description" name="description" rows="4" required></textarea>
+
+            <label for="contact">연락처</label>
+            <input type="text" id="contact" name="contact" required>
+
+            <button type="submit">등록하기</button>
+        </form>
+    </div>
+</body>
+</html>

@@ -1,0 +1,305 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>코딩 교육</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+            color: #333;
+        }
+
+        .container {
+            width: 80%;
+            margin: 0 auto;
+            padding: 20px;
+        }
+
+        h1 {
+            text-align: center;
+            font-size: 36px;
+            color: #28a745;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .lesson-info {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            margin-bottom: 30px;
+            animation: fadeIn 1s ease-out;
+        }
+
+        .lesson-info img {
+            width: 100%;
+            max-width: 400px;
+            margin-bottom: 20px;
+            border-radius: 8px;
+            transition: transform 0.3s ease;
+        }
+
+        .lesson-info img:hover {
+            transform: scale(1.05);
+        }
+
+        .lesson-info p {
+            font-size: 16px;
+            color: #555;
+        }
+
+        .lesson-info ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .lesson-info li {
+            font-size: 16px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .lesson-info button {
+            background-color: #28a745;
+            color: white;
+            border: none;
+            padding: 12px 30px;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+
+        .lesson-info button:hover {
+            background-color: #218838;
+            transform: scale(1.05);
+        }
+
+        .schedule-container {
+            margin-top: 30px;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            animation: fadeIn 1s ease-out;
+        }
+
+        .schedule-container table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .schedule-container table th,
+        .schedule-container table td {
+            padding: 12px;
+            text-align: center;
+            border: 1px solid #ddd;
+        }
+
+        .filter-container {
+            margin-bottom: 20px;
+            text-align: center;
+        }
+
+        .filter-container select {
+            padding: 10px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+            font-size: 16px;
+        }
+
+        /* 반응형 디자인 */
+        @media (max-width: 768px) {
+            .container {
+                width: 95%;
+            }
+
+            h1 {
+                font-size: 28px;
+            }
+
+            .lesson-info img {
+                max-width: 100%;
+            }
+
+            .lesson-info button {
+                width: 100%;
+                padding: 14px;
+                font-size: 18px;
+            }
+        }
+
+        /* 애니메이션 */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* 폼 스타일 */
+        .popup-form {
+            display: none;
+            position: fixed;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            z-index: 1000;
+        }
+
+        .popup-form input,
+        .popup-form select {
+            width: 100%;
+            padding: 10px;
+            margin: 10px 0;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+        }
+
+        .popup-form button {
+            background-color: #28a745;
+            color: white;
+            padding: 12px 30px;
+            border-radius: 5px;
+            border: none;
+            cursor: pointer;
+        }
+
+        .popup-form button:hover {
+            background-color: #218838;
+        }
+
+        .overlay {
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.5);
+            z-index: 999;
+            display: none;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container">
+        <h1>코딩 교육</h1>
+
+        <div class="lesson-info">
+            <img src="../images/coding.png" alt="코딩 교육 이미지">
+            <p>기초부터 고급까지 다양한 코딩 기술을 배울 수 있는 강좌입니다. 실습을 통해 코딩 능력을 키우세요.</p>
+            <ul>
+                <li>프로그래밍 기초 및 데이터 구조</li>
+                <li>알고리즘 및 문제 해결</li>
+                <li>웹 개발 실습</li>
+            </ul>
+            <button onclick="showSignupForm()">강좌 신청하기</button>
+        </div>
+
+        <!-- 강의 필터링 -->
+        <div class="filter-container">
+            <label for="filter" style="font-size: 18px; color: #333;">강의 일정 필터:</label>
+            <select id="filter">
+                <option value="all">모든 강의</option>
+                <option value="basic">프로그래밍 기초</option>
+                <option value="algorithm">알고리즘 및 문제 해결</option>
+                <option value="webdev">웹 개발 실습</option>
+            </select>
+        </div>
+
+        <!-- 강의 일정 -->
+        <div class="schedule-container">
+            <h3>강의 일정</h3>
+            <table id="schedule-table">
+                <thead>
+                    <tr>
+                        <th>날짜</th>
+                        <th>시간</th>
+                        <th>내용</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="basic">
+                        <td>2024-12-01</td>
+                        <td>14:00 ~ 16:00</td>
+                        <td>프로그래밍 기초</td>
+                    </tr>
+                    <tr class="algorithm">
+                        <td>2024-12-02</td>
+                        <td>14:00 ~ 16:00</td>
+                        <td>알고리즘 및 문제 해결</td>
+                    </tr>
+                    <tr class="webdev">
+                        <td>2024-12-03</td>
+                        <td>14:00 ~ 16:00</td>
+                        <td>웹 개발 실습</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+
+    <!-- 팝업 폼 -->
+    <div class="overlay" id="overlay"></div>
+    <div class="popup-form" id="popupForm">
+        <h3>강좌 신청</h3>
+        <form id="signupForm">
+            <input type="text" id="name" name="name" placeholder="이름" required>
+            <input type="email" id="email" name="email" placeholder="이메일" required>
+            <select id="course" name="course">
+                <option value="basic">프로그래밍 기초</option>
+                <option value="algorithm">알고리즘 및 문제 해결</option>
+                <option value="webdev">웹 개발 실습</option>
+            </select>
+            <button type="submit">신청하기</button>
+        </form>
+    </div>
+
+    <script>
+        // 강의 필터링 기능
+        document.getElementById('filter').addEventListener('change', function () {
+            var selectedValue = this.value;
+            var rows = document.querySelectorAll('#schedule-table tbody tr');
+
+            rows.forEach(function (row) {
+                if (selectedValue === 'all') {
+                    row.style.display = '';
+                } else if (row.classList.contains(selectedValue)) {
+                    row.style.display = '';
+                } else {
+                    row.style.display = 'none';
+                }
+            });
+        });
+
+        // 강좌 신청 팝업 표시
+        function showSignupForm() {
+            document.getElementById('overlay').style.display = 'block';
+            document.getElementById('popupForm').style.display = 'block';
+        }
+
+        // 팝업 폼 제출
+        document.getElementById('signupForm').addEventListener('submit', function (e) {
+            e.preventDefault();
+            alert('강좌 신청이 완료되었습니다!');
+            document.getElementById('overlay').style.display = 'none';
+            document.getElementById('popupForm').style.display = 'none';
+        });
+    </script>
+
+</body>
+
+</html>

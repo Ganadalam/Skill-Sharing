@@ -1,0 +1,112 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-color: #f5f5f5;
+  }
+  
+  .header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #000;
+    color: #fff;
+    padding: 10px 20px;
+  }
+  
+  .logo {
+    font-size: 20px;
+  }
+  
+  .auth-links a {
+    color: #fff;
+    text-decoration: none;
+    margin-left: 10px;
+  }
+  
+  .course-card {
+    display: flex;
+    padding: 20px;
+    background: #fff;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .course-image {
+    max-width: 250px;
+    border-radius: 10px;
+    margin-right: 20px;
+  }
+  
+  .course-info h1 {
+    margin-top: 0;
+  }
+  
+  .description {
+    color: #555;
+  }
+  
+  .rating {
+    margin: 10px 0;
+    font-size: 18px;
+  }
+  
+  .apply-button {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+  }
+  
+  .apply-button:hover {
+    background-color: #0056b3;
+  }
+  
+  .tabs {
+    display: flex;
+    justify-content: center;
+    background-color: #fff;
+    padding: 10px;
+  }
+  
+  .tab-button {
+    margin: 0 10px;
+    padding: 10px 20px;
+    cursor: pointer;
+    border: none;
+    background: #f0f0f0;
+    border-radius: 5px;
+  }
+  
+  .tab-button.active {
+    background: #007bff;
+    color: #fff;
+  }
+  
+  .tab-content {
+    background: #fff;
+    padding: 20px;
+    max-width: 800px;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  .review-header {
+    display: flex;
+    align-items: center;
+    font-size: 18px;
+  }
+  
+  .review-text {
+    margin: 10px 0;
+  }
+  
+  .review-author {
+    color: #777;
+  }
+  

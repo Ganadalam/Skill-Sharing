@@ -1,0 +1,364 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>즐겨찾기</title>
+    <link rel="stylesheet" href="favorite.css">
+    <style>
+        /* 기본 스타일 초기화 */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background-color: #f9f9f9;
+            color: #333;
+        }
+
+        /* 헤더 스타일 */
+        header {
+            background-color: #d4e0fe;
+            padding: 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        header a {
+            text-decoration: none;
+        }
+
+        #logo {
+            width: 120px;
+        }
+
+        #top-nav img {
+            width: 32px;
+            margin-left: 20px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        #top-nav img:hover {
+            transform: scale(1.1);
+        }
+
+        /* 페이지 제목 스타일 */
+        .header {
+            text-align: center;
+            background-color: #ffffffad;
+            color: #7f8185;
+            padding: 30px 0;
+            font-size: 20px;
+            font-weight: bold;
+        }
+
+        /* 검색 바 스타일 */
+        .search-bar {
+            display: flex;
+            justify-content: center;
+            margin-top: 20px;
+        }
+
+        .search-bar input {
+            width: 70%;
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+        }
+
+        .search-bar button {
+            padding: 10px 15px;
+            margin-left: 10px;
+            background-color: #3498db;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+            transition: background-color 0.3s;
+        }
+
+        .search-bar button:hover {
+            background-color: #2980b9;
+        }
+
+        /* 메인 컨텐츠 스타일 */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+            margin: 20px auto;
+            width: 90%;
+        }
+
+        .category {
+            width: 48%;
+            background: white;
+            border-radius: 15px;
+            padding: 20px;
+            margin-bottom: 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .category:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+        }
+
+        .category h2 {
+            text-align: center;
+            margin-bottom: 20px;
+            color: #34495e;
+        }
+
+        .list-item {
+            background-color: #ecf0f1;
+            padding: 20px;
+            border-radius: 10px;
+            margin: 10px 0;
+            transition: background-color 0.3s;
+            opacity: 1;
+            transition: opacity 0.3s;
+        }
+
+        .list-item:hover {
+            background-color: #dfe6e9;
+        }
+
+        .list-item h3 {
+            font-size: 18px;
+            color: #2c3e50;
+        }
+
+        .list-item p {
+            font-size: 14px;
+            color: #555;
+            margin-bottom: 10px;
+        }
+
+        .list-item a {
+            display: inline-block;
+            color: #3498db;
+            text-decoration: none;
+            font-weight: bold;
+            margin-bottom: 10px;
+        }
+
+        .list-item a:hover {
+            text-decoration: underline;
+        }
+
+        .favorite-btn {
+            background-color: #e74c3c;
+            color: white;
+            border: none;
+            padding: 8px 16px;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 14px;
+            transition: background-color 0.3s;
+        }
+
+        .favorite-btn:hover {
+            background-color: #c0392b;
+        }
+
+        /* 상세 내용 스타일 */
+        .item-details {
+            display: none;
+            margin-top: 10px;
+            padding: 10px;
+            background-color: #bdc3c7;
+            border-radius: 5px;
+        }
+
+        .item-details p {
+            margin: 5px 0;
+            font-size: 14px;
+            color: #2c3e50;
+        }
+
+        /* 반응형 디자인 */
+        @media (max-width: 768px) {
+            .container {
+                flex-direction: column;
+            }
+
+            .category {
+                width: 90%;
+            }
+        }
+
+        /* 페이지네이션 */
+        .pagination {
+            text-align: center;
+            padding: 20px 0;
+        }
+
+        .pagination button {
+            margin: 0 5px;
+            padding: 8px 12px;
+            border-radius: 5px;
+            border: none;
+            background-color: #3498db;
+            color: white;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        .pagination button:hover {
+            background-color: #2980b9;
+        }
+
+        /* 푸터 스타일 */
+        footer {
+            background-color: #34495e;
+            padding: 20px 0;
+            text-align: center;
+            color: white;
+        }
+
+        footer #social-media img {
+            width: 30px;
+            margin: 0 10px;
+            cursor: pointer;
+            transition: transform 0.2s;
+        }
+
+        footer #social-media img:hover {
+            transform: scale(1.2);
+        }
+    </style>
+</head>
+<body>
+    <!-- 헤더 -->
+    <header>
+        <a href="newmain.html"><img src="../images/logo.png" alt="Logo" id="logo"></a>
+        <nav id="top-nav">
+            <a href="favorite.html" title="즐겨찾기"><img src="../images/즐겨찾기.png" alt="즐겨찾기"></a>
+            <a href="signup.html" title="회원가입"><img src="../images/회원가입.png" alt="회원가입"></a>
+            <a href="login.html" title="로그인"><img src="../images/로그인.png" alt="로그인"></a>
+            <a href="community.html" title="커뮤니티"><img src="../images/커뮤니티.png" alt="커뮤니티"></a>
+        </nav>
+    </header>
+
+    <!-- 제목 -->
+    <div class="header">
+        <h1> My Favorites </h1>
+    </div>
+
+    <!-- 검색 기능 -->
+    <div class="search-bar">
+        <input type="text" id="search-bar" placeholder="즐겨찾기 항목 검색..." onkeyup="searchItems()">
+        <button onclick="searchItems()">검색</button>
+    </div>
+
+    <!-- 메인 컨텐츠 -->
+    <div class="container" id="favorite-container">
+        <!-- 카테고리: 전문가 -->
+        <div class="category">
+            <h2>전문가</h2>
+            <div class="list-item" data-name="IT 보안 전문가">
+                <h3>IT 보안 전문가</h3>
+                <p>기업의 사이버 보안을 강화하는 전문가입니다.</p>
+                <a href="#" onclick="toggleDetails(this)">자세히 보기</a>
+                <div class="item-details">
+                    <p>상세 내용: IT 보안 전문가들은 시스템 취약점을 식별하고 보안 프로토콜을 강화하는 역할을 합니다. 대기업과 정부 기관에서 많이 찾는 직군입니다.</p>
+                </div>
+                <button class="favorite-btn" onclick="removeItem(this)">제거</button>
+            </div>
+            <div class="list-item" data-name="데이터 분석 전문가">
+                <h3>데이터 분석 전문가</h3>
+                <p>효율적인 데이터 분석을 통해 비즈니스 인사이트를 제공합니다.</p>
+                <a href="#" onclick="toggleDetails(this)">자세히 보기</a>
+                <div class="item-details">
+                    <p>상세 내용: 데이터 분석 전문가들은 데이터를 분석하고 통찰력을 제공하여 비즈니스 의사 결정을 지원하는 역할을 합니다. 주요 도구로는 Python과 SQL이 있습니다.</p>
+                </div>
+                </div>
+            <div class="list-item" data-name="프론트엔드 개발 전문가">
+                <h3>프론트엔드 개발 전문가</h3>
+                <p>웹사이트와 애플리케이션의 인터페이스를 구축하는 전문가입니다.</p>
+                <a href="#">자세히 보기</a>
+                <button class="favorite-btn" onclick="removeItem(this)">제거</button>
+            </div>
+        </div>
+
+        <!-- 카테고리: 단체 -->
+        <div class="category">
+            <h2>단체</h2>
+            <div class="list-item" data-name="한국 웹 개발자 협회">
+                <h3>한국 웹 개발자 협회</h3>
+                <p>웹 개발자들의 전문성을 높이기 위한 다양한 교육 프로그램을 제공합니다.</p>
+                <a href="#">자세히 보기</a>
+                <button class="favorite-btn" onclick="removeItem(this)">제거</button>
+            </div>
+            <div class="list-item" data-name="한국 스타트업 협회">
+                <h3>한국 스타트업 협회</h3>
+                <p>스타트업 창업자와 개발자들이 모여 다양한 창업 지원을 받는 커뮤니티입니다.</p>
+                <a href="#">자세히 보기</a>
+                <button class="favorite-btn" onclick="removeItem(this)">제거</button>
+            </div>
+            <div class="list-item" data-name="AI 연구소">
+                <h3>AI 연구소</h3>
+                <p>AI 기술 혁신과 연구를 수행하는 기관입니다.</p>
+                <a href="#">자세히 보기</a>
+                <button class="favorite-btn" onclick="removeItem(this)">제거</button>
+            </div>
+        </div>
+    </div>
+
+       
+    <!-- 페이지네이션 -->
+    <div class="pagination">
+        <button>이전</button>
+        <button>1</button>
+        <button>2</button>
+        <button>다음</button>
+    </div>
+
+    <!-- 푸터 -->
+    <footer>
+        <p>&copy; 2024 All rights reserved</p>
+    </footer>
+
+    <script>
+        function removeItem(button) {
+            var item = button.parentElement;
+            item.style.opacity = '0';
+            setTimeout(function() {
+                item.remove();
+            }, 300);
+        }
+
+        function searchItems() {
+            var input, filter, container, items, item, i, txtValue;
+            input = document.getElementById("search-bar");
+            filter = input.value.toUpperCase();
+            container = document.getElementById("favorite-container");
+            items = container.getElementsByClassName("list-item");
+
+            for (i = 0; i < items.length; i++) {
+                item = items[i];
+                txtValue = item.textContent || item.innerText;
+                if (txtValue.toUpperCase().indexOf(filter) > -1) {
+                    item.style.display = "";
+                } else {
+                    item.style.display = "none";
+                }
+            }
+        }
+
+        function toggleDetails(link) {
+            var details = link.nextElementSibling;
+            details.style.display = (details.style.display === "none" || details.style.display === "") ? "block" : "none";
+        }
+    </script>
+</body>
+</html>

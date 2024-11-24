@@ -1,0 +1,200 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>공지사항</title>
+    <style>
+        body {
+            font-family: 'Arial', sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f9f9f9;
+        }
+
+        /* 헤더 스타일 */
+        .header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #ffffff;
+            padding: 10px 20px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .header .logo {
+            display: flex;
+            align-items: center;
+        }
+
+        .header .logo img {
+            height: 40px;
+            margin-right: 10px;
+        }
+
+        .header .logo a {
+            text-decoration: none;
+            font-size: 1.8em;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .header .nav-center {
+            display: flex;
+            gap: 20px;
+        }
+
+        .header .nav-center a {
+            text-decoration: none;
+            font-size: 1.1em;
+            color: #333;
+        }
+
+        .header .nav-center a:hover {
+            color: #007bff;
+        }
+
+        .header .nav-right {
+            display: flex;
+            gap: 15px;
+        }
+
+        .header .nav-right a {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+            font-size: 1em;
+            color: #666;
+        }
+
+        .header .nav-right a img {
+            height: 20px;
+            margin-right: 5px;
+        }
+
+        .header .nav-right a:hover {
+            color: #007bff;
+        }
+
+        /* 공지사항 컨테이너 */
+        .notice-container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background: #ffffff;
+            border-radius: 8px;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .notice-item {
+            padding: 20px;
+            border-bottom: 1px solid #ddd;
+            margin-bottom: 15px;
+        }
+
+        .notice-item:last-child {
+            border-bottom: none;
+        }
+
+        .notice-item a {
+            text-decoration: none;
+            font-size: 1.5em;
+            font-weight: bold;
+            color: #333;
+        }
+
+        .notice-item a:hover {
+            color: #0056b3;
+        }
+
+        .notice-meta {
+            font-size: 0.9em;
+            color: #999;
+        }
+
+        .important {
+            background-color: #ffe6e6;
+            border: 1px solid #ff4d4d;
+            border-radius: 8px;
+            padding: 20px;
+        }
+
+        .important a {
+            color: #ff4d4d;
+        }
+
+        .important a:hover {
+            color: #e63939;
+        }
+
+        .read-more {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 1em;
+            background-color: #007bff;
+            color: #fff;
+            text-decoration: none;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        .read-more:hover {
+            background-color: #0056b3;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="header">
+        <div class="logo">
+            <a href="newmain.html"><img src="../images/logo.png" alt="로고"></a>
+            
+        </div>
+        <div class="nav-center">
+            <a href="newmain.html">홈</a>
+            <a href="event2.html">이벤트</a>
+            <a href="notice.html">공지사항</a>
+        </div>
+        <div class="nav-right">
+            <a href="favorite.html"><img src="../images/즐겨찾기.png" alt="즐겨찾기"></a>
+            <a href="login.html"><img src="../images/로그인.png" alt="로그인"></a>
+            <a href="signup.html"><img src="../images/회원가입.png" alt="회원가입"></a>
+            <a href="community.html"><img src="../images/커뮤니티.png" alt="커뮤니티"></a>
+        </div>
+    </div>
+
+    <div class="notice-container">
+        <!-- 중요 공지 -->
+        <div class="notice-item important">
+            <a href="notice-detail.html">🎉 연말 이벤트 일정 공지</a>
+            <p class="notice-meta">2024년 12월 01일 • 이벤트</p>
+            <p>2024년 연말 특별 이벤트가 시작됩니다! 참가 신청 방법과 혜택을 놓치지 마세요.</p>
+            <a href="notice-detail.html" class="read-more">더 보기</a>
+        </div>
+
+        <!-- 일반 공지 -->
+        <div class="notice-item">
+            <a href="notice-detail.html">💻 서버 점검 안내</a>
+            <p class="notice-meta">2024년 12월 15일 • 서비스</p>
+            <p>서비스 안정화를 위한 서버 점검이 예정되어 있습니다. 점검 시간 동안 서비스 이용이 제한될 수 있습니다.</p>
+            <a href="notice-detail.html" class="read-more">더 보기</a>
+        </div>
+
+        <div class="notice-item">
+            <a href="notice-detail.html">📢 신규 기능 업데이트</a>
+            <p class="notice-meta">2024년 12월 10일 • 업데이트</p>
+            <p>사용자 경험을 향상시키기 위한 새로운 기능이 추가되었습니다! 업데이트 내용을 확인해 보세요.</p>
+            <a href="notice-detail.html" class="read-more">더 보기</a>
+        </div>
+
+        <div class="notice-item">
+            <a href="notice-detail.html">🛒 겨울 프로모션 안내</a>
+            <p class="notice-meta">2024년 12월 05일 • 프로모션</p>
+            <p>한정 기간 동안 특별 할인과 다양한 혜택을 제공합니다! 프로모션 세부 정보를 확인하세요.</p>
+            <a href="notice-detail.html" class="read-more">더 보기</a>
+        </div>
+    </div>
+</body>
+
+</html>

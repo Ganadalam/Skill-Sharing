@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>커뮤니티 페이지</title>
+  <link rel="stylesheet" href="community.css">
+</head>
+<body>
+
+  <!-- 네비게이션 바 -->
+  <div class="navbar">
+    <header>
+      <a href="newmain.html">
+        <img src="../images/logo.png" alt="로고" style="height: 30px; width: auto;">
+      </a>
+    </header>
+    <header>
+        <div class="container">
+              <nav id="top-nav">
+                <a href="favorite.html" title="즐겨찾기"><img src="../images/즐겨찾기.png" alt="즐겨찾기"></a>
+                <a href="signup.html" title="회원가입"><img src="../images/회원가입.png" alt="회원가입"></a>
+                <a href="login.html" title="로그인"><img src="../images/로그인.png" alt="로그인"></a>
+                <a href="community.html" title="커뮤니티"><img src="../images/커뮤니티.png" alt="커뮤니티"></a>
+            </nav>
+        </div>
+    </header>
+ 
+      </ul>
+    </nav>
+  </div>
+
+  <!-- 커뮤니티 텍스트 -->
+  <div class="community-header" style="text-align: center; margin-top: 40px; font-size: 2em; font-weight: bold;">
+    커뮤니티
+  </div>
+
+  <!-- 검색창 -->
+  <div class="search-container">
+    <input type="text" id="search-input" placeholder="검색어를 입력하세요..." oninput="searchPosts()">
+    <button>검색</button>
+  </div>
+
+  <!-- 글 작성 버튼 -->
+  <button class="create-post" onclick="togglePostForm()">
+    <i class="fa fa-pencil"></i> 글 작성하기
+  </button>
+
+  <!-- 글 작성 폼 (모달) -->
+  <div class="post-form" id="post-form">
+    <div class="form-content">
+      <button class="close-btn" onclick="togglePostForm()">×</button>
+      <h2>게시글 작성</h2>
+      <input type="text" id="post-title" placeholder="제목을 입력하세요">
+      <textarea id="post-content" placeholder="내용을 입력하세요"></textarea>
+      <input type="file" id="post-image">
+      <button onclick="submitPost()">게시글 작성</button>
+    </div>
+  </div>
+
+  <!-- 게시글 리스트 -->
+  <div class="post-list" id="post-list">
+    <!-- 기존 게시글들 -->
+    <div class="post">
+      <div class="post-header">
+        <div>
+          <h2>AI 기술의 역량 강화</h2>
+          <p class="author">작성자: 대학원생 훈</p>
+          <p class="time">2024-11-24</p>
+        </div>
+        <div class="actions">
+          <button class="like-btn" onclick="toggleLike(this)">👍 (3)</button>
+          <button class="thumb-btn" onclick="toggleThumb(this)">👊 (1)</button>
+          <button class="comment-btn" onclick="toggleComments(this)">💬 </button>
+        </div>
+      </div>
+      <p>AI 기술, 코딩 관련 강습, 워크샵 추천해주세요! 특히 의료, 교육, 예술 분야에서의 가능성에 대해 이야기해보려 합니다...!</p>
+      <!-- 이미지 추가 -->
+      <img src="../images/coding.png" alt="AI 기술 이미지">
+      <!-- 댓글 섹션 -->
+      <div class="comments-section" style="display: none;">
+        <textarea placeholder="댓글을 입력하세요..."></textarea>
+        <button onclick="submitComment(this)">댓글 작성</button>
+        <!-- 댓글 리스트 추가 -->
+        <div class="comments-list"></div>
+      </div>
+    </div>
+
+    <div class="post">
+      <div class="post-header">
+        <div>
+          <h2>헬린이용 운동 추천</h2>
+          <p class="author">작성자: 송수빈</p>
+          <p class="time">2024-11-23</p>
+        </div>
+        <div class="actions">
+          <button class="like-btn" onclick="toggleLike(this)">👍 (5)</button>
+          <button class="thumb-btn" onclick="toggleThumb(this)">👊 (2)</button>
+          <button class="comment-btn" onclick="toggleComments(this)">💬 </button>
+        </div>
+      </div>
+      <p> 크로스핏 좋아해요~ 운동 관련 강습 추천해주세요~</p>
+      <!-- 이미지 추가 -->
+      <img src="../images/exercise.jpg" alt="운동 이미지">
+      <!-- 댓글 섹션 -->
+      <div class="comments-section" style="display: none;">
+        <textarea placeholder="댓글을 입력하세요..."></textarea>
+        <button onclick="submitComment(this)">댓글 작성</button>
+        <!-- 댓글 리스트 추가 -->
+        <div class="comments-list"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- 페이지 네비게이션 -->
+  <div class="pagination">
+    <button class="active">1</button>
+    <button>2</button>
+    <button>3</button>
+    <button>4</button>
+  </div>
+</body>
+<script src="community.js"></script>
+</html>
