@@ -1,0 +1,175 @@
+/* 기본 스타일 */
+body {
+    margin: 0;
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f5f5f5;
+}
+
+/* 헤더 스타일 */
+header {
+    background-color: #6ca4fe;
+    color: #fff;
+    padding: 15px 20px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 2px solid #34568b;
+}
+
+header #logo img {
+    width: 120px;
+}
+
+/* 중앙 네비게이션 */
+#center-nav {
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+}
+
+#center-nav a {
+    color: white;
+    font-size: 16px;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 16px;
+    transition: background-color 0.3s;
+}
+
+#center-nav a:hover {
+    background-color: #34568b;
+    border-radius: 5px;
+}
+
+/* 오른쪽 네비게이션 */
+#right-nav {
+    display: flex;
+    gap: 15px;
+}
+
+#right-nav a img {
+    width: 30px;
+    height: 30px;
+}
+
+/* 메인 스타일 */
+#lecture-detail {
+    text-align: center;
+    padding: 20px;
+    background-color: #fff;
+    margin: 20px auto;
+    max-width: 800px;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#lecture-detail img {
+    width: 100%;
+    max-width: 600px;
+    border-radius: 10px;
+}
+
+#lecture-detail h2 {
+    color: #34568b;
+    margin-top: 20px;
+}
+
+#lecture-detail button {
+    margin-top: 20px;
+    background-color: #1abc9c;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+#lecture-detail button:hover {
+    background-color: #16a085;
+}
+
+/* 리뷰 섹션 */
+#reviews {
+    padding: 20px;
+    margin: 20px auto;
+    max-width: 800px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+#reviews h3 {
+    color: #34568b;
+    margin-bottom: 20px;
+}
+
+/* 리뷰 리스트 */
+#review-list {
+    list-style: none;
+    padding: 0;
+    margin: 0 0 20px;
+}
+
+#review-list li {
+    margin-bottom: 15px;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+    background-color: #f9f9f9;
+}
+
+/* 리뷰 작성 폼 */
+#review-form input, #review-form textarea, #review-form select, #review-form button {
+    width: 100%;
+    margin-bottom: 15px;
+    padding: 10px;
+    font-size: 14px;
+    border-radius: 5px;
+    border: 1px solid #ddd;
+}
+
+#review-form input, #review-form select, #review-form button {
+    background-color: #fff;
+    transition: background-color 0.3s;
+}
+
+#review-form button {
+    background-color: #6ca4fe;
+    color: white;
+    border: none;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+#review-form input:focus, #review-form textarea:focus, #review-form select:focus {
+    outline: none;
+    border-color: #1abc9c;
+}
+
+#review-form button:hover {
+    background-color: #34568b;
+}
+
+/* 푸터 */
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #34568b;
+    color: #fff;
+}
+
+footer div {
+    margin-bottom: 10px;
+}
+
+footer div a img {
+    width: 30px;
+    height: 30px;
+    margin: 0 10px;
+}
+
+footer p {
+    font-size: 14px;
+}

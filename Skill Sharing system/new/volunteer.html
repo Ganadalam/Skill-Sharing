@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>재능 기부 플랫폼</title>
+    <style>
+        /* 공통 스타일 */
+        body {
+            font-family: 'Noto Sans KR', Arial, sans-serif;
+            background-color: #f8f9fa;
+            margin: 0;
+            color: #333;
+        }
+
+        header {
+            background-color: #6ca4fe;
+            color: white;
+            padding: 15px 20px;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            flex-wrap: wrap;
+        }
+
+        header img {
+            width: 80px;
+        }
+
+        nav {
+            display: flex;
+            gap: 15px;
+            margin-left: auto;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            padding: 8px 12px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+        }
+
+        nav a:hover,
+        nav a:focus {
+            background-color: #34568b;
+            outline: none;
+        }
+
+        .tabs {
+            display: flex;
+            justify-content: center;
+            margin: 20px 0;
+            gap: 10px;
+        }
+
+        .tab {
+            padding: 10px 20px;
+            font-weight: bold;
+            text-align: center;
+            cursor: pointer;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            background-color: white;
+            transition: all 0.3s;
+        }
+
+        .tab.active {
+            background-color: #3498db;
+            color: white;
+            border: 1px solid #3498db;
+        }
+
+        .tab:hover {
+            background-color: #f1f1f1;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 30px auto;
+            padding: 20px;
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+            text-align: center;
+            color: #2c3e50;
+        }
+
+        p {
+            margin-bottom: 15px;
+        }
+
+        label {
+            display: block;
+            margin: 10px 0 5px;
+            font-weight: bold;
+            color: #555;
+        }
+
+        input,
+        textarea,
+        select {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            font-size: 16px;
+            background-color: #f9f9f9;
+            transition: border-color 0.3s;
+        }
+
+        input:focus,
+        textarea:focus,
+        select:focus {
+            border-color: #3498db;
+            outline: none;
+            background-color: white;
+        }
+
+        button {
+            width: 100%;
+            padding: 12px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            font-size: 16px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        button[disabled] {
+            background-color: #ddd;
+            cursor: not-allowed;
+        }
+
+        .hidden {
+            display: none;
+        }
+
+        .fade-in {
+            animation: fadeIn 0.5s ease;
+        }
+
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+            }
+            to {
+                opacity: 1;
+            }
+        }
+
+        /* 반응형 */
+        @media screen and (max-width: 768px) {
+            header {
+                text-align: center;
+            }
+
+            nav {
+                flex-direction: column;
+                align-items: center;
+                gap: 10px;
+                margin-left: 0;
+            }
+
+            nav a {
+                padding: 8px 15px;
+            }
+
+            .tabs {
+                flex-direction: column;
+                align-items: center;
+                gap: 15px;
+            }
+
+            .tab {
+                width: 100%;
+                padding: 12px 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<header>
+    <a href="newmain.html" title="메인페이지"><img src="../images/logo.png" alt="플랫폼 로고"></a>
+    <nav>
+        <a href="favorite.html" title="즐겨찾기"><img src="../images/즐겨찾기.png" alt="즐겨찾기"></a>
+        <a href="signup.html" title="회원가입"><img src="../images/회원가입.png" alt="회원가입"></a>
+        <a href="login.html" title="로그인"><img src="../images/로그인.png" alt="로그인"></a>
+        <a href="community.html" title="커뮤니티"><img src="../images/커뮤니티.png" alt="커뮤니티"></a>
+    </nav>
+</header>
+
+<div class="tabs">
+    <div class="tab active" id="tab-home" role="button" aria-selected="true" tabindex="0">홈</div>
+    <div class="tab" id="tab-donation" role="button" tabindex="0">강의 신청</div>
+    <div class="tab" id="tab-guide" role="button" tabindex="0">안내</div>
+</div>
+
+<div class="container fade-in" id="content-home">
+    <h1>재능 기부 플랫폼에 오신 것을 환영합니다!</h1>
+    <p>
+        
+    </br>
+        <strong>   함께하는 기부, 세상을 바꾸는 힘!</strong> </br> </br>
+        재능기부로 더 나은 세상을 만들어요! </br></br>
+        여기에서 나누는 작은 기부가 지역 사회와 다양한 프로젝트에 큰 영향을 미칩니다. 재능 기부는 돈이 아닌 지식, 경험, 기술로 나누는 사랑입니다.
+        
+
+    환영합니다!
+    이곳은 여러분의 재능을 나누고, 필요한 사람들에게 도움을 줄 수 있는 공간입니다. 기부 활동을 시작하기 전에 알아야 할 모든 정보를 이곳에서 확인하세요.
+    
+    <ol>
+    <strong><li> 재능 기부?</strong></br> 물질적 기부 X, 여러분의 시간, 기술, 경험을 나눠 세상에 도움주는 활동!</br></br>
+    
+    <li> 어떻게 참여하나요?
+        
+    </li>    
+    (1) 기부 분야 선택: </br> - 기부할 수 있는 분야 선택.</br>
+    - 프로젝트 탐색: 도움이 필요한 프로젝트나 사람을 찾아보세요.
+</br></br>
+    (2) 기부 신청: 관심 있는 프로젝트에 기부를 신청, 기부 활동 시작.
+</br></br>
+    <li> 기부 후에는 무엇이 일어나나요?
+    기부 활동 후, 여러분은 피드백을 받을 수 있습니다. 여러분의 기부가 만든 변화를 확인, 결과를 얻을 수 있어요.</br></br>
+    </li>
+    <li>  
+    기부활동의 보상?</br>
+    기부에 참여할 때마다 활동 인증 배지나 레벨을 획득할 수 있어요. </br>이를 통해 기부 활동의 성과를 확인하고, 더 많은 기회를 얻을 수 있어요.
+    </li>
+</br>
+    <li>
+    기부자와 기부 대상자 간의 소통
+    기부 후, 기부 대상자와 직접 피드백을 주고받을 수 있는 공간이 마련되어 있습니다. 기부 활동을 통해 함께 성장하고 배우는 기회를 가지세요.
+    </li>
+</br>
+    <li>
+    기부 활동의 변화
+    기부를 통해 직접 변화의 일원이 되며, 지역 사회나 다양한 프로젝트에 실질적인 도움을 줄 수 있습니다. 여러분의 작은 기여가 큰 변화를 만들어갑니다.
+    </li>
+</ol>
+<p>       기부로 세상을 바꾸는 여정에 함께하세요!
+    언제든지 이 안내 탭에서 기부와 관련된 추가 정보를 확인하실 수 있습니다. 궁금한 사항이 있으면 문의하기 버튼을 통해 언제든지 질문해 주세요. </br></br><strong>여러분의 참여가 세상을 더욱 아름답게 만듭니다!</strong></p>
+
+</p> 
+</div>
+</p>
+</div>
+    <button onclick="switchTab('donation')">지금 신청하기</button>
+</div>
+
+<div class="container hidden fade-in" id="content-donation">
+    <h1>재능 기부 강의 신청</h1>
+    <form id="donation-form">
+        <label for="name">강사 이름</label>
+        <input type="text" id="name" placeholder="예: 김재능" required>
+
+        <label for="title">강의 제목</label>
+        <input type="text" id="title" placeholder="예: 웹 개발 기초" required>
+
+        <label for="price">강의 가격</label>
+        <input type="number" id="price" placeholder="가격을 입력하세요" required>
+
+        <label for="description">강의 내용</label>
+        <textarea id="description" rows="5" placeholder="강의 내용을 입력하세요." required></textarea>
+
+        <label for="date">강의 날짜</label>
+        <input type="date" id="date" required>
+
+        <button type="button" onclick="confirmSubmission()">신청하기</button>
+    </form>
+</div>
+
+<div class="container hidden fade-in" id="content-guide">
+    <h1>강의 신청 안내</h1>
+    <p>강의를 신청하고 참여하는 방법을 안내드립니다.</p>
+    <p>기부, 참여, 그리고 더 나은 세상을 위한 안내
+        <div class="container fade-in" id="content-home">
+    <h1>재능 기부 플랫폼에 오신 것을 환영합니다!</h1>
+    <p>함께하는 기부, 세상을 바꾸는 힘! 재능기부로 더 나은 세상을 만드세요.</p>
+    <p>여기에서 나누는 작은 기부가 지역 사회와 다양한 프로젝트에 큰 영향을 미칩니다. 재능 기부는 돈이 아닌 지식, 경험, 기술로 나누는 사랑입니다.</p>
+    <p><strong>기부는 어렵지 않아요!</strong> 간단한 참여: 자신이 가진 재능을 쉽고 빠르게 기부할 수 있습니다. 예를 들어, 코딩, 디자인, 상담, 교육 등 다양한 분야에서 활동할 수 있습니다.</p>
+    <p><strong>내 기부, 내 방식:</strong> 자신만의 기부 방식으로 도움이 필요한 사람들과 연결됩니다. 맞춤형 기부로 더 큰 변화를 만들어 가세요.</p>
+    <p><strong>기부가 만들어낸 변화:</strong> 기부를 통해 도움이 필요한 사람들에게 실질적인 변화를 선물할 수 있습니다. 기부 후, 여러분이 만든 변화에 대한 피드백도 받을 수 있어 보람을 느낄 수 있습니다.</p>
+    <p><strong>기부는 나만의 가치 있는 경험!</strong> 새로운 인연과의 만남: 다양한 분야의 전문가들과 협업하며, 자신이 가진 능력을 더 넓게 펼칠 수 있습니다.</p>
+    <p><strong>나만의 기부 이야기:</strong> 기부 활동을 통해 얻은 경험은 여러분의 가치와 세상을 보는 시각을 넓히는 기회가 될 것입니다.</p>
+    <p>기부가 주는 감동과 기쁨, 함께 나누세요! 지금 바로 기부 활동을 시작해보세요. 소중한 재능이 누군가에게는 큰 힘이 됩니다!</p>
+    <button onclick="switchTab('donation')">지금 신청하기</button>
+
+<script>
+    const tabs = document.querySelectorAll('.tab');
+    const contents = {
+        home: document.getElementById('content-home'),
+        donation: document.getElementById('content-donation'),
+        guide: document.getElementById('content-guide')
+    };
+
+    tabs.forEach(tab => {
+        tab.addEventListener('click', () => switchTab(tab.id.replace('tab-', '')));
+        tab.addEventListener('keydown', (e) => {
+            if (e.key === "Enter" || e.key === " ") {
+                switchTab(tab.id.replace('tab-', ''));
+            }
+        });
+    });
+
+    function switchTab(tabName) {
+        tabs.forEach(t => t.classList.remove('active'));
+        document.getElementById(`tab-${tabName}`).classList.add('active');
+
+        Object.values(contents).forEach(c => c.classList.add('hidden'));
+        contents[tabName].classList.remove('hidden');
+    }
+
+    function confirmSubmission() {
+        const form = document.getElementById('donation-form');
+        if (form.reportValidity()) {
+            alert("신청이 완료되었습니다!");
+            form.reset();
+        }
+    }
+</script>
+</body>
+</html>

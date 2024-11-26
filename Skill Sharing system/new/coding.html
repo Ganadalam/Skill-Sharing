@@ -34,6 +34,9 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
             margin-bottom: 30px;
             animation: fadeIn 1s ease-out;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
         }
 
         .lesson-info img {
@@ -72,6 +75,7 @@
             border-radius: 5px;
             cursor: pointer;
             transition: background-color 0.3s ease, transform 0.3s ease;
+            margin-right: 10px;
         }
 
         .lesson-info button:hover {
@@ -130,6 +134,7 @@
                 width: 100%;
                 padding: 14px;
                 font-size: 18px;
+                margin: 5px 0;
             }
         }
 
@@ -144,7 +149,7 @@
             }
         }
 
-        /* 폼 스타일 */
+        /* 팝업 폼 */
         .popup-form {
             display: none;
             position: fixed;
@@ -199,14 +204,19 @@
         <h1>코딩 교육</h1>
 
         <div class="lesson-info">
-            <img src="../images/coding.png" alt="코딩 교육 이미지">
-            <p>기초부터 고급까지 다양한 코딩 기술을 배울 수 있는 강좌입니다. 실습을 통해 코딩 능력을 키우세요.</p>
-            <ul>
-                <li>프로그래밍 기초 및 데이터 구조</li>
-                <li>알고리즘 및 문제 해결</li>
-                <li>웹 개발 실습</li>
-            </ul>
-            <button onclick="showSignupForm()">강좌 신청하기</button>
+            <div>
+                <img src="../images/coding.png" alt="코딩 교육 이미지">
+                <p>기초부터 고급까지 다양한 코딩 기술을 배울 수 있는 강좌입니다. 실습을 통해 코딩 능력을 키우세요.</p>
+                <ul>
+                    <li>프로그래밍 기초 및 데이터 구조</li>
+                    <li>알고리즘 및 문제 해결</li>
+                    <li>웹 개발 실습</li>
+                </ul>
+            </div>
+            <div>
+                <button onclick="showSignupForm()">강좌 신청하기</button>
+                <button onclick="viewCourseReviews()">강의평 보러가기</button>
+            </div>
         </div>
 
         <!-- 강의 필터링 -->
@@ -285,16 +295,19 @@
             });
         });
 
-        // 강좌 신청 팝업 표시
+        // 강좌 신청 폼 팝업
         function showSignupForm() {
             document.getElementById('overlay').style.display = 'block';
             document.getElementById('popupForm').style.display = 'block';
         }
 
-        // 팝업 폼 제출
-        document.getElementById('signupForm').addEventListener('submit', function (e) {
-            e.preventDefault();
-            alert('강좌 신청이 완료되었습니다!');
+        // 강의평 보기 팝업 또는 페이지 이동
+        function viewCourseReviews() {
+            window.location.href = 'lecture.html'; // 강의평 페이지로 이동
+        }
+
+        // 팝업 닫기
+        document.getElementById('overlay').addEventListener('click', function () {
             document.getElementById('overlay').style.display = 'none';
             document.getElementById('popupForm').style.display = 'none';
         });

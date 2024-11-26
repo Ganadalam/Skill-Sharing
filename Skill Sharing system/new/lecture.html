@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ko">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>강의 상세</title>
+    <link rel="stylesheet" href="lecture.css">
+</head>
+
+<body>
+    <!-- 헤더 -->
+    <header>
+        <div class="container">
+            <a href="main.html" id="logo"><img src="../images/logo.png" alt="Logo"></a>
+            <nav id="center-nav">
+                <a href="home.html">홈</a>
+                <a href="event.html">이벤트</a>
+                <a href="info.html">안내</a>
+            </nav>
+            <nav id="right-nav">
+                <a href="favorite.html"><img src="../images/즐겨찾기.png" alt="즐겨찾기"></a>
+                <a href="signup.html"><img src="../images/회원가입.png" alt="회원가입"></a>
+                <a href="login.html"><img src="../images/로그인.png" alt="로그인"></a>
+                <a href="community.html"><img src="../images/커뮤니티.png" alt="커뮤니티"></a>
+            </nav>
+        </div>
+    </header>
+
+    <!-- 메인 -->
+    <main>
+        <!-- 강의 상세 -->
+        <section id="lecture-detail">
+            <img src="../images/coding.png" alt="강의 이미지">
+            <h2>"2024 연말 Coding Buff 이벤트!"</h2>
+            <p>기간: 2024.01.01 ~ 2024.02.01</p>
+            <p>위치: 서울특별시 강남구</p>
+            <p>참가비: 무료</p>
+            <button id="apply-button">수강신청하기</button>
+        </section>
+
+        <!-- 리뷰 -->
+        <section id="reviews">
+            <h3>리뷰</h3>
+            <ul id="review-list">
+                <li>
+                    <p><strong>닉네임:</strong> 코딩초보</p>
+                    <p>⭐⭐⭐⭐⭐</p>
+                    <p>아주 좋은 강의였어요!</p>
+                </li>
+                <li>
+                    <p><strong>닉네임:</strong> 배워가는중</p>
+                    <p>⭐⭐⭐⭐</p>
+                    <p>초보자에게도 쉽게 이해되는 내용이었어요.</p>
+                </li>
+                <li>
+                    <p><strong>닉네임:</strong> 개발자</p>
+                    <p>⭐⭐⭐⭐⭐</p>
+                    <p>강력 추천합니다. 실무에도 바로 활용 가능합니다!</p>
+                </li>
+            </ul>
+
+            <div id="review-form">
+                <input type="text" id="nickname" placeholder="닉네임 (필수)" aria-label="닉네임 입력">
+                <textarea id="review-input" placeholder="리뷰 작성 (필수)" aria-label="리뷰 작성"></textarea>
+                <select id="rating">
+                    <option value="5">⭐⭐⭐⭐⭐</option>
+                    <option value="4">⭐⭐⭐⭐</option>
+                    <option value="3">⭐⭐⭐</option>
+                    <option value="2">⭐⭐</option>
+                    <option value="1">⭐</option>
+                </select>
+                <button id="submit-button">리뷰 등록</button>
+            </div>
+        </section>
+    </main>
+
+    <!-- 푸터 -->
+    <footer>
+        <div>
+            <a href="https://www.instagram.com"><img src="../images/instagram.png" alt="Instagram"></a>
+            <a href="https://www.blog.com"><img src="../images/blog.png" alt="Blog"></a>
+            <a href="https://www.youtube.com"><img src="../images/youtube.png" alt="YouTube"></a>
+        </div>
+        <p>&copy; 2024. All rights reserved.</p>
+    </footer>
+    <script src="lecture.js"></script>
+</body>
+
+</html>

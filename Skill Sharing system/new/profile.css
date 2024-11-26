@@ -1,0 +1,271 @@
+/* 기본 스타일 */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Poppins', sans-serif;
+  }
+  
+  body {
+    background-color: #f4f4f4;
+    color: #333;
+  }
+  
+  header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 20px;
+    background-color: white;
+    border-bottom: 1px solid #ddd;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  
+  header .logo {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+  }
+  
+  header .logo img {
+    height: 40px;
+    cursor: pointer;
+  }
+  
+  header .nav-links {
+    display: flex;
+    gap: 25px;
+  }
+  
+  header .nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 8px;
+    font-size: 16px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  }
+  
+  header .nav-links a:hover {
+    background-color: #007BFF;
+    color: white;
+    transform: scale(1.05);
+  }
+  
+  header .right-links {
+    display: flex;
+    gap: 20px;
+    align-items: center;
+  }
+  
+  header .right-links a {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: background-color 0.3s ease, color 0.3s ease, transform 0.2s ease;
+  }
+  
+  header .right-links a:hover {
+    background-color: #FF5733;
+    color: white;
+    transform: scale(1.05);
+  }
+  
+  header .auth-links {
+    display: flex;
+    gap: 15px;
+  }
+  
+  header .auth-links a {
+    text-decoration: none;
+    color: #007BFF;
+    font-weight: 500;
+    font-size: 16px;
+    padding: 10px 15px;
+    border-radius: 8px;
+    transition: color 0.3s ease, background-color 0.3s ease, transform 0.2s ease;
+  }
+  
+  header .auth-links a:hover {
+    background-color: #0056b3;
+    color: white;
+    transform: scale(1.05);
+  }
+  
+  /* 프로필 섹션 */
+  .profile-section {
+    display: flex;
+    justify-content: space-between;
+    padding: 40px;
+    background-color: white;
+    margin: 20px auto;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    max-width: 1200px;
+  }
+  
+  .profile-card {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .profile-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-bottom: 15px;
+  }
+  
+  .profile-card h2 {
+    font-size: 24px;
+    font-weight: 600;
+    color: #333;
+  }
+  
+  .profile-card .level {
+    font-size: 16px;
+    color: #888;
+  }
+  
+  .badge-section {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+  }
+  
+  .badge-section h3 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .badges {
+    display: flex;
+    gap: 15px;
+  }
+  
+  .badge {
+    background-color: #f4f4f4;
+    padding: 10px 20px;
+    border-radius: 8px;
+    font-size: 14px;
+    text-align: center;
+    width: 120px;
+    height: 80px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  /* 진행 중인 강의 섹션 */
+  .courses-section {
+    padding: 40px;
+    background-color: white;
+    margin: 20px auto;
+    max-width: 1200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .courses-section h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  .course-card {
+    display: flex;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 15px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .course-card img {
+    width: 120px;
+    height: 120px;
+    border-radius: 8px;
+    margin-right: 20px;
+  }
+  
+  .course-info h4 {
+    font-size: 20px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 10px;
+  }
+  
+  .course-info p {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  /* 강사평 섹션 */
+  .review-section {
+    padding: 40px;
+    background-color: white;
+    margin: 20px auto;
+    max-width: 1200px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .review-section h3 {
+    font-size: 24px;
+    font-weight: 600;
+    margin-bottom: 20px;
+  }
+  
+  .review-card {
+    display: flex;
+    margin-bottom: 20px;
+    padding: 15px;
+    background-color: #f9f9f9;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .review-profile img {
+    width: 60px;
+    height: 60px;
+    border-radius: 50%;
+    object-fit: cover;
+    margin-right: 15px;
+  }
+  
+  .review-profile p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #333;
+  }
+  
+  .review-content h4 {
+    font-size: 18px;
+    font-weight: 500;
+    color: #333;
+    margin-bottom: 5px;
+  }
+  
+  .review-content p {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  .review-content p:first-child {
+    font-weight: bold;
+    color: #FFB400;
+  }
+  
+  

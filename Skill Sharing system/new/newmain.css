@@ -22,11 +22,19 @@ body {
   padding: 15px 30px;
   color: #000000;
 }
+
+#top-nav {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  gap: 20px; /* 아이콘 간 간격 */
+  padding: 10px 20px;
+}
+
 /* 공통 아이콘 스타일 */
 #top-nav a img {
-  width: 24px; /* 아이콘의 기본 너비 */
-  height: 24px; /* 아이콘의 기본 높이 */
-  margin: 0 10px; /* 아이콘 간 간격 */
+  width: 24px;
+  height: 24px;
   transition: transform 0.3s ease; /* 호버 시 부드러운 애니메이션 */
 }
 
@@ -34,28 +42,11 @@ body {
   transform: scale(1.2); /* 호버 시 크기 확대 */
 }
 
-/* 헤더 영역 스타일 */
-#top-nav {
-  display: flex;
-  justify-content: flex-end;
-  align-items: center;
-  gap: 15px; /* 아이콘 간 간격 */
-  padding: 10px 20px;
-}
-
-#logo {
-  height: 40px; /* 로고 크기 */
+/* Logo */
+.logo-image {
+  height: 40px;
   width: auto;
-  margin-right: auto; /* 왼쪽 정렬 */
-}
-
-/* Updated logo font for a more professional look */
-.header .logo {
-  font-size: 32px; /* Larger size for better visibility */
-  font-weight: 700;
-  font-family: 'Montserrat', sans-serif; /* Professional and modern font */
-  letter-spacing: 2px; /* Slight letter-spacing for emphasis */
-  text-transform: uppercase; /* Makes the logo more distinct */
+  margin-right: auto;
 }
 
 /* Navigation links styling */
@@ -64,17 +55,15 @@ nav a {
   margin-left: 20px;
   text-decoration: none;
   font-weight: 500;
-  font-family: 'Lora', serif; /* Serif font for a more classic, professional feel */
-  font-size: 18px; /* Slightly larger font size for better readability */
-  letter-spacing: 1px; /* Slight letter-spacing for a more open feel */
+  font-family: 'Lora', serif;
+  font-size: 18px;
+  letter-spacing: 1px;
+  transition: color 0.3s ease;
 }
 
 nav a:hover {
   text-decoration: underline;
-}
-
-.auth-buttons a:hover {
-  text-decoration: underline;
+  color: #3498db; /* Change color on hover */
 }
 
 /* Main content */
@@ -82,11 +71,13 @@ nav a:hover {
   display: flex;
   justify-content: space-between;
   padding: 30px;
+  gap: 30px;
 }
 
 /* Map container */
 .map-container {
   flex: 1;
+  min-width: 300px; /* Min width for map container */
 }
 
 /* Search Container */
@@ -96,24 +87,24 @@ nav a:hover {
   align-items: center;
   margin-bottom: 30px;
   width: 100%;
-  max-width: 700px; /* Limiting the max width */
+  max-width: 700px;
   margin-left: auto;
   margin-right: auto;
 }
 
 .search-bar {
-  width: 70%; /* Make the search bar more prominent */
+  width: 70%;
   padding: 12px 20px;
   font-size: 16px;
   border: 2px solid #3498db;
-  border-radius: 30px 0 0 30px; /* Rounded left corners */
+  border-radius: 30px 0 0 30px;
   background-color: #fff;
   transition: all 0.3s ease;
 }
 
 .search-bar:focus {
   outline: none;
-  border-color: #2980b9; /* Darker blue when focused */
+  border-color: #2980b9;
   box-shadow: 0 4px 12px rgba(41, 128, 185, 0.3);
 }
 
@@ -126,7 +117,7 @@ nav a:hover {
   padding: 12px 20px;
   background-color: #3498db;
   border: none;
-  border-radius: 0 30px 30px 0; /* Rounded right corners */
+  border-radius: 0 30px 30px 0;
   color: white;
   font-size: 16px;
   cursor: pointer;
@@ -184,4 +175,50 @@ nav a:hover {
     flex-direction: column;
     align-items: center;
   }
+
+  /* Cards adjustment */
+  .cards-container {
+    max-width: 100%;
+  }
+
+  .search-container {
+    flex-direction: column;
+    align-items: center;
+    width: 90%;
+  }
+
+  .search-bar {
+    width: 100%;
+  }
+}
+.search-container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 10px; /* Adjust gap between buttons */
+}
+
+.search-bar {
+  flex-grow: 1; /* Make search bar take available space */
+  padding: 10px;
+  font-size: 16px;
+}
+
+
+.donate-skill-button {
+  padding: 10px 20px;
+  font-size: 10px;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+}
+
+.donate-skill-button {
+  background-color: #70cbea; /* 재능 기부 버튼 색상 */
+  color: white;
+
+}
+
+.donate-skill-button:hover {
+  background-color: #007bb5;
 }
